@@ -111,7 +111,7 @@ function lily_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 7,
         'menu_icon'          => 'dashicons-heart',
-        'supports'           => array( 'title'),
+        'supports'           => array( 'thumbnail'),
         'template_lock'      => 'all'
     );
     register_post_type( 'lily-testimonials', $args );
@@ -122,7 +122,7 @@ add_action( 'init', 'lily_register_custom_post_types' );
 function lily_register_taxonomies(){
     //add Project Type taxonomy
     $labels = array(
-        'name'              => _x( 'Staff Categories', 'taxonomy general name' ),
+        'name'              => _x( 'Project Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Project Category', 'taxonomy singular name' ),
         'search_items'      => __( 'Search Project Categories' ),
         'all_items'         => __( 'All Project Category' ),
