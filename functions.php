@@ -182,3 +182,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Custom Post Types & Taxonomies
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
+ * Remove Editor from Home, About, and Contact pages
+ */
+function lw_post_filter( $use_block_editor, $post ) {
+    if ( 13 === $post->ID || 16 === $post->ID || 19 === $post->ID ) {
+        return false;
+    }
+    return $use_block_editor;
+}
+add_filter( 'use_block_editor_for_post', 'lw_post_filter', 10, 2 );
