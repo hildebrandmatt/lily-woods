@@ -187,7 +187,7 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
  * Remove Editor from Home, About, and Contact pages
  */
 function lw_post_filter( $use_block_editor, $post ) {
-    if ( 13 === $post->ID || 16 === $post->ID || 19 === $post->ID ) {
+    if ( 13 === $post->ID || 16 === $post->ID || 19 === $post->ID || 352 === $post->ID ) {
         return false;
     }
     return $use_block_editor;
