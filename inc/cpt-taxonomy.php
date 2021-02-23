@@ -69,7 +69,7 @@ function lily_register_custom_post_types() {
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'our-packages' ),
         'capability_type'    => 'post',
-        'has_archive'        => true,
+        'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 6,
         'menu_icon'          => 'dashicons-money-alt',
@@ -111,7 +111,7 @@ function lily_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 7,
         'menu_icon'          => 'dashicons-heart',
-        'supports'           => array( 'thumbnail'),
+        'supports'           => array( 'thumbnail', 'title'),
         'template_lock'      => 'all'
     );
     register_post_type( 'lily-testimonials', $args );
