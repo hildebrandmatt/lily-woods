@@ -28,7 +28,7 @@ get_header();
 
 			<section id="portfolio-sneak-peek">
 				<?php $portfolioimages = get_field('portfolio_sneak_peek');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $portfolioimages ): ?>
 					<?php foreach( $portfolioimages as $image_id ): ?>						
 						<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
@@ -46,13 +46,14 @@ get_header();
 
 			<section id="featured-gallery">
 				<?php $featuredimages = get_field('home_featured_gallery');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $featuredimages ): ?>
 					<?php foreach( $featuredimages as $image_id ): ?>
 						<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</section>
+			
 		<?php endwhile; ?>
 		
 	</main><!-- #primary -->
