@@ -19,12 +19,20 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post(); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+			<section id="contact-info">
+				<?php $image = get_field('contact_photo');
+				if( !empty( $image ) ): ?>
+					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="contact-image" />
+				<?php endif; ?>
 
+				<p><?php the_field('contact_package_info'); ?></p>
+				<p><?php the_field('contact_phone'); ?></p>
+				<p><?php the_field('contact_email'); ?></p>
+			</section>
 
-		endwhile; // End of the loop.
+		<?php endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->

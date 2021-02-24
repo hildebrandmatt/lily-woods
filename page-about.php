@@ -24,7 +24,7 @@ get_header();
 			?><section id="about-section-top">
 				<?php $image = get_field('about_photographer_image');
 				if( !empty( $image ) ): ?>
-					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="banner-image" />
+					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="about-image" />
 				<?php endif; ?>
 
 				<article id="about-text-top">
@@ -54,7 +54,7 @@ get_header();
 						// Load sub field value.
 						$image = get_sub_field('associate_about_photo');
 						if( !empty( $image ) ): ?>
-							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="banner-image" />
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="associate-image" />
 						<?php endif; ?>
 
 						<article class="about-text">
