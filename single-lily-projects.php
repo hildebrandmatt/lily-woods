@@ -16,7 +16,23 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			the_post_thumbnail('large');
+
+			?><section class="project-description"><?php
+				if ( get_field('single_project_description') ){
+					?><p> <?php the_field('single_project_description') ?> </p><?php
+				} ?>
+			</section>
+
+			<section class="project-gallery">
+				<?php $images = get_field('single_project_gallery');
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				if( $images ): ?>
+					<?php foreach( $images as $image_id ): ?>
+						<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</section> <?php
 
 		endwhile; // End of the loop.
 		?>

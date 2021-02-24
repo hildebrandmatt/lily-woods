@@ -53,8 +53,39 @@ get_header();
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</section>
-			
-		<?php endwhile; ?>
+
+            <?php 
+
+			//If we want a testimonial carousel presumbly need to change the below code!
+
+			$args = array(
+                'post_type' => 'lily-testimonials',
+				'orderby'	=> 'rand',
+                'posts_per_page' => 1,
+            );
+
+            $query = new WP_Query( $args );
+
+            if ( $query->have_posts() ) {
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+
+                    ?><section class="testimonial-section">
+					<?php
+						the_post_thumbnail('medium');
+						if ( get_field('testimonial_text') ){
+							?><p> <?php the_field('testimonial_text') ?> </p><?php
+						}
+						if ( get_field('testimonial_client') ){
+							?><p> <?php the_field('testimonial_client') ?> </p><?php
+						}
+					?></section><?php
+
+                }
+                wp_reset_postdata();
+            }
+
+		endwhile; ?>
 		
 	</main><!-- #primary -->
 
