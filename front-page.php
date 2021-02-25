@@ -21,10 +21,13 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			if ( function_exists( 'get_field' ) ){
+
 			$image = get_field('banner');
-			if( !empty( $image ) ): ?>
-				<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="banner-image" />
-			<?php endif; ?>
+			$size = 'full'; // (thumbnail, medium, large, full or custom size)
+			if( $image ) {
+				echo wp_get_attachment_image( $image, $size );
+			}?>
 
 			<section id="portfolio-sneak-peek">
 				<?php $portfolioimages = get_field('portfolio_sneak_peek');
@@ -38,10 +41,11 @@ get_header();
 
 			<section id="about-section">
 				<?php $image = get_field('home_about_image');
-				if( !empty( $image ) ): ?>
-					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-				<?php endif; ?>
-				<?php the_field('home_about'); ?>
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}
+				the_field('home_about'); ?>
 			</section>
 
 			<section id="featured-gallery">
@@ -66,24 +70,28 @@ get_header();
 
             $query = new WP_Query( $args );
 
-            if ( $query->have_posts() ) {
-                while ( $query->have_posts() ) {
+            if ( $query->have_posts() ) :
+				?><section class="testimonial-section">
+				<?php
+                while ( $query->have_posts() ) :
                     $query->the_post();
 
-                    ?><section class="testimonial-section">
-					<?php
-						the_post_thumbnail('medium');
-						if ( get_field('testimonial_text') ){
-							?><p> <?php the_field('testimonial_text') ?> </p><?php
-						}
-						if ( get_field('testimonial_client') ){
-							?><p> <?php the_field('testimonial_client') ?> </p><?php
-						}
-					?></section><?php
+					?><div class="testimonial-div"><?php
+					the_post_thumbnail('medium');
+					if ( get_field('testimonial_text') ){
+						?><p> <?php the_field('testimonial_text') ?> </p><?php
+					}
+					if ( get_field('testimonial_client') ){
+						?><p> <?php the_field('testimonial_client') ?> </p><?php
+					}
+					?></div><?php
 
-                }
-                wp_reset_postdata();
-            }
+                	wp_reset_postdata();
+				endwhile;
+				?></section><?php
+			endif;
+
+			}
 
 		endwhile; ?>
 		

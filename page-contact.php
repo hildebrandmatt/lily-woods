@@ -21,15 +21,20 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
-			<section class="contact-info">
-				<?php $image = get_field('contact_photo');
-				if( !empty( $image ) ): ?>
-					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="contact-image" />
-				<?php endif; ?>
+			<section class="contact-info"><?php
+				//check for acf existing
+				if ( function_exists( 'get_field' ) ){?>
 
-				<p><?php the_field('contact_package_info'); ?></p>
-				<p><?php the_field('contact_phone'); ?></p>
-				<p><?php the_field('contact_email'); ?></p>
+					<p><?php the_field('contact_package_info'); ?></p>
+					<p><?php the_field('contact_phone'); ?></p>
+					<p><?php the_field('contact_email'); ?></p><?php
+
+					$image = get_field('contact_photo');
+					$size = 'large'; // (thumbnail, medium, large, full or custom size)
+					if( $image ) {
+						echo wp_get_attachment_image( $image, $size );
+					}
+				}?>
 			</section>
 
             <section class="contact-form">

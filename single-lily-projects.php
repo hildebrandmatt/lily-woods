@@ -16,6 +16,8 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			if ( function_exists( 'get_field' ) ){
+
 			the_post_thumbnail('large');
 
 			?><section class="project-description"><?php
@@ -33,6 +35,8 @@ get_header();
 					<?php endforeach; ?>
 				<?php endif; ?>
 			</section> <?php
+
+			}
 
 		endwhile; // End of the loop.
 		?>

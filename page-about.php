@@ -21,11 +21,14 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			?><section id="about-section-top">
-				<?php $image = get_field('about_photographer_image');
-				if( !empty( $image ) ): ?>
-					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="about-image" />
-				<?php endif; ?>
+			if ( function_exists( 'get_field' ) ){
+
+			?><section id="about-section-top"><?php
+				$image = get_field('about_photographer_image');
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}?>
 
 				<article id="about-text-top">
 					<h3><?php the_field('about_photographer_title'); ?></h3>
@@ -53,9 +56,10 @@ get_header();
 					while( have_rows('associate_about_repeater') ) : the_row();
 						// Load sub field value.
 						$image = get_sub_field('associate_about_photo');
-						if( !empty( $image ) ): ?>
-							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="associate-image" />
-						<?php endif; ?>
+						$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}?>
 
 						<article class="about-text">
 							<h3><?php the_sub_field('associate_about_title'); ?></h3>
@@ -66,9 +70,10 @@ get_header();
 				else :
 					// Do something...
 				endif; ?>
-			</section>
+			</section><?php
+			}
 
-		<?php endwhile; // End of the loop.
+		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->

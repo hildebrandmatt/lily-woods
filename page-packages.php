@@ -31,14 +31,17 @@ get_header();
 
                     ?><section class="package-section">
 						<h3> <?php the_title() ?> </h3> <?php
-						if ( get_field('package_price') ){
-							?><p> <?php the_field('package_price') ?> </p><?php
-						}
-						if ( get_field('package_duration') ){
-							?><p> <?php the_field('package_duration') ?> </p><?php
-						}
-						if ( get_field('package_description') ){
-							?><p> <?php the_field('package_description') ?> </p><?php
+						//check for acf existing
+						if ( function_exists( 'get_field' ) ){
+							if ( get_field('package_price') ){
+								?><p> <?php the_field('package_price') ?> </p><?php
+							}
+							if ( get_field('package_duration') ){
+								?><p> <?php the_field('package_duration') ?> </p><?php
+							}
+							if ( get_field('package_description') ){
+								?><p> <?php the_field('package_description') ?> </p><?php
+							}
 						}
 					?></section><?php
 
