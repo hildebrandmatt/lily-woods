@@ -21,6 +21,10 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
+            <section class="contact-form">
+                <?php echo do_shortcode( '[forminator_form id="369"]' ); ?>
+            </section>
+
 			<section class="contact-info"><?php
 				//check for acf existing
 				if ( function_exists( 'get_field' ) ){?>
@@ -36,10 +40,6 @@ get_header();
 					}
 				}?>
 			</section>
-
-            <section class="contact-form">
-                <?php echo do_shortcode( '[forminator_form id="369"]' ); ?>
-            </section>
 
 		<?php endwhile; // End of the loop.
 		?>
