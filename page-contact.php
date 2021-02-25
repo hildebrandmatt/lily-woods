@@ -21,7 +21,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
-			<section id="contact-info">
+			<section class="contact-info">
 				<?php $image = get_field('contact_photo');
 				if( !empty( $image ) ): ?>
 					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" id="contact-image" />
@@ -31,6 +31,10 @@ get_header();
 				<p><?php the_field('contact_phone'); ?></p>
 				<p><?php the_field('contact_email'); ?></p>
 			</section>
+
+            <section class="contact-form">
+                <?php echo do_shortcode( '[forminator_form id="369"]' ); ?>
+            </section>
 
 		<?php endwhile; // End of the loop.
 		?>
