@@ -75,6 +75,7 @@ get_header();
 					$query = new WP_Query( $args );
 
 					if ( $query->have_posts() ) {
+						?><div class="isotope-grid"><?php
 						while ( $query->have_posts() ) {
 							$query->the_post();
 
@@ -83,13 +84,19 @@ get_header();
 								$size = 'medium'; // (thumbnail, medium, large, full or custom size)
 								if( $images ): ?>
 									<?php foreach( $images as $image_id ): ?>
-										<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+										<div class="grid-item"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div>
 									<?php endforeach; ?>
 								<?php endif;
 							}
 						}
+						?></div><?php
 						wp_reset_postdata();
 					}
+				
+				/*jQuery('.isotope-grid').isotope({
+					itemSelector: '.grid-item',
+					layoutMode: 'fitRows'
+				});*/
 				endif;
 
 			the_posts_navigation();

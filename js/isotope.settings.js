@@ -1,14 +1,15 @@
 jQuery(document).ready( function($) {
 
     // Grab the .courses container
-    var $container = $('.isotope-container');
+    var $container = $('.isotope-grid');
 
     var $courses = $($container).isotope({
         // options
-        itemSelector: '.post',
-        layoutMode: 'vertical',
-        getSortData: {
-            name: "h2"
+        itemSelector: '.grid-item',
+        layoutMode: 'fit-rows',
+        percentPosition: true,
+        masonry: {
+            columnWidth: '.grid-item'
         }
     });
 
@@ -28,32 +29,4 @@ jQuery(document).ready( function($) {
             $(this).addClass('checked');
         }
     });
-
-    var $checkboxes = $('.filter-list input');
-    $checkboxes.change(function () {
-        var filters = [];
-        // Get the values of the checked checkboxes.
-        // Place the values in the filters array.
-        $checkboxes.filter(':checked').each(function () {
-            filters.push(this.value);
-        });
-        // Concatenate the values from the filters array into a single string.
-        var filterValue = filters.join('');
-        $container.isotope({ filter: filterValue });
-        console.log(filterValue);
-    });
-
-    // Add the .checked class to list items holding a checked checkbox.
-    $('.filter-list input:checkbox').click(function () {
-        $('.filter-list li:has(input:checkbox:checked)').addClass('checked');
-        $('.filter-list li:has(input:checkbox:not(:checked))').removeClass('checked');
-    });
-
-    // Clear all checkboxes, remove .checked class from containing list items.
-    $('.sort-clear .clear-all').on( 'click', function() {
-        $('.filter-list input:checkbox:checked').removeAttr('checked');
-        $container.isotope({ filter: '*' });
-        $('.filter-list li:has(input:checkbox:not(:checked))').removeClass('checked');
-    });
-
 });
