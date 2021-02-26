@@ -149,6 +149,7 @@ function lily_register_taxonomies(){
 
     register_taxonomy( 'lily-project-type', array( 'lily-projects' ), $args );
 
+
     //add Package Type taxonomy
     $labels = array(
         'name'              => _x( 'Package Categories', 'taxonomy general name' ),
@@ -176,7 +177,7 @@ function lily_register_taxonomies(){
         'rewrite'           => array( 'slug' => 'package-types' ),
     );
 
-    register_taxonomy( 'lily-project-type', array( 'lily-packages' ), $args );
+    register_taxonomy( 'lily-package-type', array( 'lily-packages' ), $args );
 }
 add_action( 'init', 'lily_register_taxonomies');
 
