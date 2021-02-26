@@ -50,6 +50,7 @@ get_header();
 							<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
 						<?php endforeach; ?>
 					<?php endif; ?>
+					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
 				</div>
 			</section>
 

@@ -23,10 +23,12 @@ get_header();
 			the_post(); ?>
 
             <section class="contact-form">
+				<h2 class="screen-reader-text">Contact Form</h2>
                 <?php echo do_shortcode( '[forminator_form id="369"]' ); ?>
             </section>
 
-			<section class="contact-info"><?php
+			<section class="contact-info">
+				<h2 class="screen-reader-text">Contact Info</h2><?php
 				//check for acf existing
 				if ( function_exists( 'get_field' ) ){?>
 
