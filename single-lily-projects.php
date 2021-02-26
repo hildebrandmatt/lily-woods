@@ -21,13 +21,15 @@ get_header();
 
 			the_post_thumbnail('large');
 
-			?><section class="project-description"><?php
+			?><section class="project-description">
+				<h2 class="screen-reader-text">Project Description</h2><?php
 				if ( get_field('single_project_description') ){
 					?><p> <?php the_field('single_project_description') ?> </p><?php
 				} ?>
 			</section>
 
 			<section class="project-gallery">
+				<h2 class="screen-reader-text">Gallery</h2>
 				<?php $images = get_field('single_project_gallery');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
@@ -41,6 +43,8 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+
+		<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my other projects!</a>
 
 	</main><!-- #main -->
 
