@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<h1 class="screen-reader-text">Welcome to Lily Woods Photography</h1>
 
 		<?php
 		while ( have_posts() ) :
@@ -30,6 +31,7 @@ get_header();
 			}?>
 
 			<section id="portfolio-sneak-peek">
+				<h2 class="screen-reader-text">Portfolio Sneak Peak Gallery</h2>
 				<?php $portfolioimages = get_field('portfolio_sneak_peek');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $portfolioimages ): ?>
@@ -37,9 +39,11 @@ get_header();
 						<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
 					<?php endforeach; ?>
 				<?php endif; ?>
+				
 			</section>
 
 			<section id="about-section">
+				<h2 class="screen-reader-text">About Me</h2>
 				<?php $image = get_field('home_about_image');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $image ) {
@@ -49,6 +53,7 @@ get_header();
 			</section>
 
 			<section id="featured-gallery">
+				<h2 class="screen-reader-text">Featured Gallery</h2>
 				<?php $featuredimages = get_field('home_featured_gallery');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $featuredimages ): ?>
@@ -72,6 +77,7 @@ get_header();
 
             if ( $query->have_posts() ) :
 				?><section class="testimonial-section">
+				<h2 class="screen-reader-text">Testimonial</h2>
 				<?php
                 while ( $query->have_posts() ) :
                     $query->the_post();
@@ -94,6 +100,8 @@ get_header();
 			}
 
 		endwhile; ?>
+
+		<a href="<?php echo get_page_link(352) ?>">See our packages here</a>
 		
 	</main><!-- #primary -->
 

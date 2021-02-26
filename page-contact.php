@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<h1>Contact Me</h1>
 
 		<?php
 		while ( have_posts() ) :
@@ -30,8 +31,12 @@ get_header();
 				if ( function_exists( 'get_field' ) ){?>
 
 					<p><?php the_field('contact_package_info'); ?></p>
-					<p><?php the_field('contact_phone'); ?></p>
-					<p><?php the_field('contact_email'); ?></p><?php
+					<a href="tel:<?php the_field('contact_phone') ?>">
+						<p><?php the_field('contact_phone'); ?></p>
+					</a>
+					<a href="mailto:<?php the_field('contact_email') ?>">
+						<p><?php the_field('contact_email'); ?></p>
+					</a><?php
 
 					$image = get_field('contact_photo');
 					$size = 'large'; // (thumbnail, medium, large, full or custom size)

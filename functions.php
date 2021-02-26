@@ -121,7 +121,7 @@ add_action( 'after_setup_theme', 'lily_woods_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function lily_woods_widgets_init() {
+/*function lily_woods_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'lily-woods' ),
@@ -134,7 +134,7 @@ function lily_woods_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'lily_woods_widgets_init' );
+add_action( 'widgets_init', 'lily_woods_widgets_init' );*/
 
 /**
  * Enqueue scripts and styles.

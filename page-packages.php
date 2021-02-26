@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<h1>Our Packages</h1>
 
 		<?php
             $args = array(
@@ -30,7 +31,7 @@ get_header();
                     $query->the_post();
 
                     ?><section class="package-section">
-						<h3> <?php the_title() ?> </h3> <?php
+						<h2> <?php the_title() ?> </h2> <?php
 						//check for acf existing
 						if ( function_exists( 'get_field' ) ){
 							if ( get_field('package_price') ){
@@ -58,7 +59,7 @@ get_header();
 					while( have_rows('faq_repeater') ) : the_row();
 						// Load sub field value.
 						?><article class="faq-question">
-							<h4><?php the_sub_field('question'); ?></h4>
+							<h3><?php the_sub_field('question'); ?></h3>
 							<p><?php the_sub_field('answer'); ?></p>
 						</article>
 					<?php endwhile;

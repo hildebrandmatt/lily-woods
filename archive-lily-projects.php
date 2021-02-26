@@ -11,20 +11,16 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<h1>Portfolio</h1>
 
 		<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<?php
-					//the_archive_title( '<h1 class="page-title">', '</h1>' );
-					//the_archive_description( '<div class="archive-description">', '</div>' );
-					?>
-				</header><!-- .page-header -->
 
 				<nav class="category-nav"><?php
 
 				$terms = get_terms( array(
 					'taxonomy' => 'lily-project-type',
+					'orderby' => 'count',
+					'order' => 'DESC',
 				) );
 				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 					foreach ( $terms as $term ) {
@@ -35,14 +31,15 @@ get_header();
 				</nav><?php
 
 				if ( $_GET['id'] == "" ) {
-					$category = "stories";
+					$category = "Stories";
 				} else {
 					$category = $_GET['id'];
 				}
 
 				/* For stories... */
-				if ( $category == "stories") :
+				if ( $category == "Stories") :
 				/* Start the Loop */
+					?><h2>Experience their stories</h2><?php
 					while ( have_posts() ) :
 						the_post();
 
@@ -60,7 +57,7 @@ get_header();
 						}
 
 					endwhile;
-				else :
+				else :					
 
 					$args = array(
 						'post_type' => 'lily-projects',

@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<h1 class="screen-reader-text">About Me</h1>
 
 		<?php
 		while ( have_posts() ) :
@@ -23,45 +24,50 @@ get_header();
 
 			if ( function_exists( 'get_field' ) ){
 
-			?><section id="about-section-top"><?php
-				$image = get_field('about_photographer_image');
-				$size = 'large'; // (thumbnail, medium, large, full or custom size)
-				if( $image ) {
-					echo wp_get_attachment_image( $image, $size );
-				}?>
+			?>
+			<section id="about-lily-woods">
+				<h2>About Lily Woods</h2>
+				<div id="about-section-top"><?php
+					$image = get_field('about_photographer_image');
+					$size = 'large'; // (thumbnail, medium, large, full or custom size)
+					if( $image ) {
+						echo wp_get_attachment_image( $image, $size );
+					}?>
 
-				<article id="about-text-top">
-					<h3><?php the_field('about_photographer_title'); ?></h3>
-					<p><?php the_field('about_photographer_description'); ?></p>
-				</article>
-			</section>
+					<article id="about-text-top">
+						<h3><?php the_field('about_photographer_title'); ?></h3>
+						<p><?php the_field('about_photographer_description'); ?></p>
+					</article>
+				</div>
 
-			<section id="about-section-bottom">
-				<p><?php the_field('about_photographer_description_cont'); ?></p>
+				<div id="about-section-bottom">
+					<p><?php the_field('about_photographer_description_cont'); ?></p>
 
-				<?php $images = get_field('about_photographer_gallery');
-				$size = 'large'; // (thumbnail, medium, large, full or custom size)
-				if( $images ): ?>
-					<?php foreach( $images as $image_id ): ?>						
-						<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
-					<?php endforeach; ?>
-				<?php endif; ?>
+					<?php $images = get_field('about_photographer_gallery');
+					$size = 'large'; // (thumbnail, medium, large, full or custom size)
+					if( $images ): ?>
+						<?php foreach( $images as $image_id ): ?>						
+							<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
+						<?php endforeach; ?>
+					<?php endif; ?>
+				</div>
 			</section>
 
 			<section id="associate-photographers">
+				<h2>Meet my associates!</h2>
 				<?php
 				// Check rows exists.
 				if( have_rows('associate_about_repeater') ):
 					// Loop through rows.
 					while( have_rows('associate_about_repeater') ) : the_row();
-						// Load sub field value.
-						$image = get_sub_field('associate_about_photo');
-						$size = 'medium'; // (thumbnail, medium, large, full or custom size)
-						if( $image ) {
-							echo wp_get_attachment_image( $image, $size );
-						}?>
+						// Load sub field value. ?>						
 
-						<article class="about-text">
+						<article class="about-article"><?php
+							$image = get_sub_field('associate_about_photo');
+							$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+							if( $image ) {
+								echo wp_get_attachment_image( $image, $size );
+							}?>
 							<h3><?php the_sub_field('associate_about_title'); ?></h3>
 							<p><?php the_sub_field('associate_about_text'); ?></p>
 						</article>
