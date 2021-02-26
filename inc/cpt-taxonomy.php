@@ -148,6 +148,36 @@ function lily_register_taxonomies(){
     );
 
     register_taxonomy( 'lily-project-type', array( 'lily-projects' ), $args );
+
+
+    //add Package Type taxonomy
+    $labels = array(
+        'name'              => _x( 'Package Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Package Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Package Categories' ),
+        'all_items'         => __( 'All Package Category' ),
+        'parent_item'       => __( 'Parent Package Category' ),
+        'parent_item_colon' => __( 'Parent Package Category:' ),
+        'edit_item'         => __( 'Edit Package Category' ),
+        'view_item'         => __( 'View Package Category' ),
+        'update_item'       => __( 'Update Package Category' ),
+        'add_new_item'      => __( 'Add New Package Category' ),
+        'new_item_name'     => __( 'New Package Category Name' ),
+        'menu_name'         => __( 'Package Category' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'package-types' ),
+    );
+
+    register_taxonomy( 'lily-package-type', array( 'lily-packages' ), $args );
 }
 add_action( 'init', 'lily_register_taxonomies');
 
