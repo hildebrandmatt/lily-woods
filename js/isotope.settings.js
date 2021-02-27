@@ -3,7 +3,6 @@ jQuery(document).ready( function($) {
     $('.isotope-full-grid').isotope({
         // options
         itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
         percentPosition: true,
         masonry: {
             columnWidth: '.grid-item'
