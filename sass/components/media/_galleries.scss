@@ -42,4 +42,22 @@
 
 .grid-item {
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 5px;
+	img {
+		flex-shrink: 0;
+		min-width: 100%;
+		min-height: 100%;
+	}
+}
+
+.grid-item-landscape {
+	width: 405px;
+	//could also make 200px to fit tighter
+}
+
+.grid-item-portrait {
+	width: 200px;
 }

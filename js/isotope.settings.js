@@ -5,7 +5,8 @@ jQuery(document).ready( function($) {
         itemSelector: '.grid-item',
         percentPosition: true,
         masonry: {
-            columnWidth: '.grid-item'
+            columnWidth: '.grid-item',
+            gutter: 5
         },
         sortBy: 'random'
     });
@@ -16,7 +17,8 @@ jQuery(document).ready( function($) {
         layoutMode: 'fitRows',
         percentPosition: true,
         masonry: {
-            columnWidth: 50
+            columnWidth: 50,
+            gutter: 5
         },
         sortBy: 'random'
     });
@@ -27,7 +29,8 @@ jQuery(document).ready( function($) {
         layoutMode: 'fitRows',
         percentPosition: true,
         masonry: {
-            columnWidth: '.grid-item'
+            columnWidth: '.grid-item',
+            gutter: 5
         },
         sortBy: 'random'
     });
