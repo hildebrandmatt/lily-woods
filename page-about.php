@@ -44,11 +44,15 @@ get_header();
 					<p><?php the_field('about_photographer_description_cont'); ?></p>
 
 					<?php $images = get_field('about_photographer_gallery');
-					$size = 'large'; // (thumbnail, medium, large, full or custom size)
+					$size = 'medium'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
+						<div class="isotope-half-grid">
 						<?php foreach( $images as $image_id ): ?>						
-							<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
+							<div class="grid-item">
+								<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+							</div>					
 						<?php endforeach; ?>
+						</div>
 					<?php endif; ?>
 					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
 				</div>

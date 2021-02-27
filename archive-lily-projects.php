@@ -39,7 +39,8 @@ get_header();
 				/* For stories... */
 				if ( $category == "Stories") :
 				/* Start the Loop */
-					?><h2>Experience their stories</h2><?php
+					?><h2>Experience their stories</h2>
+					<div class="isotope-stories-grid"><?php
 					while ( have_posts() ) :
 						the_post();
 
@@ -50,13 +51,16 @@ get_header();
 						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
 						*/
 						//get_template_part( 'template-parts/content', get_post_type() );
-						?><a href="<?php the_permalink() ?>"><?php
-						the_post_thumbnail('large');
-						?><h2><?php the_title(); ?></h2></a><?php
+						?><div class="grid-item">
+							<a href="<?php the_permalink() ?>"><?php
+							the_post_thumbnail('large');
+							?><h2><?php the_title(); ?></h2></a>
+						</div><?php
 
 						}
 
 					endwhile;
+					?></div><?php
 				else :					
 
 					$args = array(
@@ -75,7 +79,7 @@ get_header();
 					$query = new WP_Query( $args );
 
 					if ( $query->have_posts() ) {
-						?><div class="isotope-grid"><?php
+						?><div class="isotope-full-grid"><?php
 						while ( $query->have_posts() ) {
 							$query->the_post();
 

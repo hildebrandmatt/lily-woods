@@ -22,13 +22,24 @@
 	display: block;
 }
 
-.isotope-grid {
-	width: 900px;
+.isotope-full-grid {
+	width: 100vw;
+	max-width: 1200px;
+	height: 100%;
+}
+
+.isotope-half-grid {
+	width: 50vw;
+	max-width: 1000px;
+	height: 100%;
+}
+
+.isotope-stories-grid {
+	width: 100vw;
+	max-width: 1200px;
 	height: 100%;
 }
 
 .grid-item {
-	width: 300px;
-	border: 2px solid black;
 	overflow: hidden;
 }

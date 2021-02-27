@@ -1,32 +1,35 @@
 jQuery(document).ready( function($) {
 
-    // Grab the .courses container
-    var $container = $('.isotope-grid');
-
-    var $courses = $($container).isotope({
+    $('.isotope-full-grid').isotope({
         // options
         itemSelector: '.grid-item',
-        layoutMode: 'fit-rows',
+        layoutMode: 'fitRows',
         percentPosition: true,
         masonry: {
             columnWidth: '.grid-item'
-        }
+        },
+        sortBy: 'random'
     });
 
-    // layout Isotope again after all images have loaded
-    $courses.imagesLoaded( function() {
-        $courses.isotope('layout');
+    $('.isotope-half-grid').isotope({
+        // options
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        percentPosition: true,
+        masonry: {
+            columnWidth: 50
+        },
+        sortBy: 'random'
     });
 
-    // Sort based on various factors
-    $('.sort-clear .sort').on('click', function() {
-        if ( $(this).hasClass('checked')) {
-            $(this).removeClass('checked');
-            $container.isotope({ sortBy: 'original-order' } );
-        } else {
-            var sortValue = $(this).attr('data-sort-value');
-            $container.isotope({ sortBy: sortValue });
-            $(this).addClass('checked');
-        }
+    $('.isotope-stories-grid').isotope({
+        // options
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        percentPosition: true,
+        masonry: {
+            columnWidth: '.grid-item'
+        },
+        sortBy: 'random'
     });
 });

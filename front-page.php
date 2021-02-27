@@ -33,11 +33,15 @@ get_header();
 			<section id="portfolio-sneak-peek">
 				<h2 class="screen-reader-text">Portfolio Sneak Peak Gallery</h2>
 				<?php $portfolioimages = get_field('portfolio_sneak_peek');
-				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				$size = 'medium'; // (thumbnail, medium, large, full or custom size)
 				if( $portfolioimages ): ?>
-					<?php foreach( $portfolioimages as $image_id ): ?>						
-						<?php echo wp_get_attachment_image( $image_id, $size ); ?>					
-					<?php endforeach; ?>
+					<div class="isotope-half-grid">
+						<?php foreach( $portfolioimages as $image_id ): ?>
+							<div class="grid-item">					
+								<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+							</div>					
+						<?php endforeach; ?>
+					</div>
 				<?php endif; ?>
 			</section>
 
@@ -55,11 +59,15 @@ get_header();
 			<section id="featured-gallery">
 				<h2 class="screen-reader-text">Featured Gallery</h2>
 				<?php $featuredimages = get_field('home_featured_gallery');
-				$size = 'large'; // (thumbnail, medium, large, full or custom size)
+				$size = 'medium'; // (thumbnail, medium, large, full or custom size)
 				if( $featuredimages ): ?>
-					<?php foreach( $featuredimages as $image_id ): ?>
-						<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-					<?php endforeach; ?>
+					<div class="isotope-full-grid">
+						<?php foreach( $featuredimages as $image_id ): ?>
+							<div class="grid-item">
+								<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+							</div>
+						<?php endforeach; ?>
+					</div>
 				<?php endif; ?>
 			</section>
 
