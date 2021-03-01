@@ -7,7 +7,6 @@ jQuery(document).ready( function($) {
         layoutMode: 'packery',
         packery: {
             gutter: 5,
-            columnWidth: 50,
         },
         sortBy: 'random'
     });
@@ -15,12 +14,10 @@ jQuery(document).ready( function($) {
     $('.isotope-half-grid').isotope({
         // options
         itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
         percentPosition: true,
         layoutMode: 'packery',
         packery: {
             gutter: 5,
-            columnWidth: 50,
         },
         sortBy: 'random'
     });
@@ -28,12 +25,10 @@ jQuery(document).ready( function($) {
     $('.isotope-stories-grid').isotope({
         // options
         itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
         percentPosition: true,
         layoutMode: 'packery',
         packery: {
             gutter: 5,
-            columnWidth: 50,
         },
         sortBy: 'random'
     });

@@ -42,7 +42,6 @@ get_header();
 						if ( $imginfo[1] < $imginfo[2] ) {
 							?><div class="grid-item grid-item-portrait"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
 						}
-						
 					endforeach; ?>
 					</div>
 				<?php endif; ?>
