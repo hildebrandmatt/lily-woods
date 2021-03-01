@@ -6,13 +6,9 @@ jQuery(document).ready( function($) {
         percentPosition: true,
         layoutMode: 'packery',
         packery: {
-            gutter: 10,
-            columnWidth: 60,
+            gutter: 5,
+            columnWidth: 50,
         },
-        /*masonry: {
-            columnWidth: '.grid-item',
-            gutter: 5
-        },*/
         sortBy: 'random'
     });
 
@@ -21,9 +17,10 @@ jQuery(document).ready( function($) {
         itemSelector: '.grid-item',
         layoutMode: 'fitRows',
         percentPosition: true,
-        masonry: {
+        layoutMode: 'packery',
+        packery: {
+            gutter: 5,
             columnWidth: 50,
-            gutter: 5
         },
         sortBy: 'random'
     });
@@ -33,9 +30,10 @@ jQuery(document).ready( function($) {
         itemSelector: '.grid-item',
         layoutMode: 'fitRows',
         percentPosition: true,
-        masonry: {
-            columnWidth: '.grid-item',
-            gutter: 5
+        layoutMode: 'packery',
+        packery: {
+            gutter: 5,
+            columnWidth: 50,
         },
         sortBy: 'random'
     });
