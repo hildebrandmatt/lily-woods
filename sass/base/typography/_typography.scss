@@ -15,5 +15,10 @@ textarea {
     font-size: 1.25rem;
 }
 
+.question{
+    font-family: $subheading_font;
+    font-weight: 500;
+}
+
 @import "headings";
 @import "copy";

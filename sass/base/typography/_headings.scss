@@ -12,6 +12,7 @@ h1{
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 4px;
+    text-align: center;
 }
 
 h2{
@@ -20,4 +21,14 @@ h2{
     text-transform: lowercase;
     letter-spacing: 5px;
     font-size: 1.25rem;
+    text-align: center;
+}
+
+.sub-heading {
+    font-family: $heading_font;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 2rem;
+    text-align: center;
 }
