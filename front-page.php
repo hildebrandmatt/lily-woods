@@ -37,13 +37,9 @@ get_header();
 				if( $images ): ?>
 					<div class="isotope-half-grid">
 					<?php foreach( $images as $image_id ):
-						$imginfo = wp_get_attachment_image_src( $image_id, "full" );
-						if ( $imginfo[1] > $imginfo[2] ) {
-							?><div class="grid-item grid-item-landscape"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
-						}
-						if ( $imginfo[1] < $imginfo[2] ) {
-							?><div class="grid-item grid-item-portrait"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
-						}						
+						?><div class="grid-item">
+							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+						</div><?php
 					endforeach; ?>
 					</div>
 				<?php endif; ?>
@@ -71,15 +67,11 @@ get_header();
 				<?php $images = get_field('home_featured_gallery');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
-					<div class="isotope-full-grid">
+					<div class="isotope-full-grid" id="lightgallery">
 					<?php foreach( $images as $image_id ):
-						$imginfo = wp_get_attachment_image_src( $image_id, "full" );
-						if ( $imginfo[1] > $imginfo[2] ) {
-							?><div class="grid-item grid-item-landscape"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
-						}
-						if ( $imginfo[1] < $imginfo[2] ) {
-							?><div class="grid-item grid-item-portrait"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
-						}						
+						?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>">
+							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+						</div><?php
 					endforeach; ?>
 					</div>
 				<?php endif; ?>
