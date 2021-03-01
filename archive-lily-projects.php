@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<h1>www</h1>
+	<h1>Portfolio</h1>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -85,10 +85,10 @@ get_header();
 
 							if ( function_exists( 'get_field' ) ){
 								$images = get_field('single_project_gallery');
-								$size = 'large'; // (thumbnail, medium, large, full or custom size)
+								$size = 'full'; // (thumbnail, medium, large, full or custom size)
 								if( $images ): ?>
 									<?php foreach( $images as $image_id ):
-										?><div class="grid-item">
+										?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>">
 											<a href="<?php echo get_permalink() ?>">
 												<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 											</a>

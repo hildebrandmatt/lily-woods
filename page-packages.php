@@ -18,6 +18,8 @@ get_header();
 	<main id="primary" class="site-main">
 	<h1><?php the_title() ?></h1><?php
 
+		the_field( 'package_page_description' );
+
 		
 		$args = array(
 			'post_type' => 'lily-packages',
@@ -37,6 +39,9 @@ get_header();
 						if ( get_field('package_price') ){
 							?><p> <?php the_field('package_price') ?> </p><?php
 						}
+						if ( get_field('number_of_photographers') ){
+							?><p> <?php the_field('number_of_photographers') ?> </p><?php
+						}
 						if ( get_field('package_duration') ){
 							?><p> <?php the_field('package_duration') ?> </p><?php
 						}
@@ -49,6 +54,8 @@ get_header();
 			}
 			wp_reset_postdata();
 		}
+
+		the_field( 'package_notice' );
 
 		?><section id="faq-section">
 		<h2>FAQ</h2>
