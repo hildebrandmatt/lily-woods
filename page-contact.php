@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<h1>Contact Me</h1>
+	<h1><?php the_title() ?></h1>
 
 		<?php
 		while ( have_posts() ) :

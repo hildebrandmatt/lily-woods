@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<h1 class="screen-reader-text">Welcome to Lily Woods Photography</h1>
+	<h1 class="screen-reader-text"><?php the_title() ?></h1>
 
 		<?php
 		while ( have_posts() ) :
