@@ -37,7 +37,7 @@ get_header();
 					//check for acf existing
 					if ( function_exists( 'get_field' ) ){
 						if ( get_field('package_price') ){
-							?><p> <?php the_field('package_price') ?> </p><?php
+							?><p class="package-pricing"> <?php the_field('package_price') ?> </p><?php
 						}
 						if ( get_field('number_of_photographers') ){
 							?><p> <?php the_field('number_of_photographers') ?> </p><?php
@@ -58,7 +58,7 @@ get_header();
 		the_field( 'package_notice' );
 
 		?><section id="faq-section">
-		<h2>FAQ</h2>
+		<h2 class="sub-heading">FAQ</h2>
 			<?php
 			// Check rows exists.
 			if( have_rows('faq_repeater') ):
@@ -66,7 +66,7 @@ get_header();
 				while( have_rows('faq_repeater') ) : the_row();
 					// Load sub field value.
 					?><article class="faq-question">
-						<h3><?php the_sub_field('question'); ?></h3>
+						<h3 class="question"><?php the_sub_field('question'); ?></h3>
 						<p><?php the_sub_field('answer'); ?></p>
 					</article>
 				<?php endwhile;

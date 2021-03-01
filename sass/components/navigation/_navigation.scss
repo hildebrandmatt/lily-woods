@@ -60,6 +60,10 @@
 	a {
 		display: block;
 		text-decoration: none;
+        text-transform: uppercase;
+        line-height: 1rem;
+        letter-spacing: 3px;
+        padding: 9px 0px;
 	}
 
 	.current_page_item > a,
@@ -81,9 +85,15 @@
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
-	}
+	.main-navigation{
+        border-top: solid 1px $main_colour;
+        border-bottom: solid 1px $main_colour;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 0px 50px;
+        }
+    }
 }
 
 .comment-navigation,
