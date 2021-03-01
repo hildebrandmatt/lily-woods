@@ -47,6 +47,12 @@ get_header();
 					endforeach; ?>
 					</div>
 				<?php endif; ?>
+				<article id="sneak-peak-article"><?php
+					?><h3><?php the_field('sneak_peek_title'); ?></h3><?php
+					?><h4><?php the_field('sneak_peek_subtitle'); ?></h4><?php
+					the_field('sneak_peek_text') ?>
+					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+				</article>
 			</section>
 
 			<section id="about-section">
