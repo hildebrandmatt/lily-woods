@@ -4,10 +4,15 @@ jQuery(document).ready( function($) {
         // options
         itemSelector: '.grid-item',
         percentPosition: true,
-        masonry: {
+        layoutMode: 'packery',
+        packery: {
+            gutter: 10,
+            columnWidth: 60,
+        },
+        /*masonry: {
             columnWidth: '.grid-item',
             gutter: 5
-        },
+        },*/
         sortBy: 'random'
     });
 
