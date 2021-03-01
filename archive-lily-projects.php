@@ -79,7 +79,7 @@ get_header();
 					$query = new WP_Query( $args );
 
 					if ( $query->have_posts() ) {
-						?><div class="isotope-full-grid" id="lightgallery"><?php
+						?><div class="isotope-grid full-grid" id="lightgallery"><?php
 						while ( $query->have_posts() ) {
 							$query->the_post();
 

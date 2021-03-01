@@ -158,10 +158,6 @@ function lily_woods_scripts() {
 	wp_register_script( 'hc-lightgallery', get_theme_file_uri( '/js/lightgallery.min.js' ), array('jquery'), '20210225', true );
 
 	wp_enqueue_script( 'hc-lightgallery-settings', get_theme_file_uri( '/js/lightgallery-settings.js' ), array('hc-lightgallery'), '20210225', true );
-
-	/*wp_enqueue_script ( 'hc-lightgallery-thumbnail' , get_theme_file_uri( '/js/lg-fullscreen.min.js' ), array('jquery' ), '20210225' , true );
-
-	wp_enqueue_script ( 'hc-lightgallery-full-screen' , get_theme_file_uri( '/js/lg-thumbnail.min.js' ), array('jquery' ), '20210225' , true );*/
 }
 add_action( 'wp_enqueue_scripts', 'lily_woods_scripts' );
 

@@ -35,7 +35,7 @@ get_header();
 				<?php $images = get_field('portfolio_sneak_peek');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
-					<div class="isotope-half-grid">
+					<div class="isotope-grid half-grid">
 					<?php foreach( $images as $image_id ):
 						?><div class="grid-item">
 							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
@@ -67,7 +67,7 @@ get_header();
 				<?php $images = get_field('home_featured_gallery');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
-					<div class="isotope-full-grid" id="lightgallery">
+					<div class="isotope-grid full-grid" id="lightgallery">
 					<?php foreach( $images as $image_id ):
 						?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>">
 							<?php echo wp_get_attachment_image( $image_id, $size ); ?>

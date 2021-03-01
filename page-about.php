@@ -46,7 +46,7 @@ get_header();
 					<?php $images = get_field('about_photographer_gallery');
 					$size = 'large'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
-						<div class="isotope-half-grid">
+						<div class="isotope-grid half-grid">
 						<?php foreach( $images as $image_id ):
 							$imginfo = wp_get_attachment_image_src( $image_id, "full" );
 							if ( $imginfo[1] > $imginfo[2] ) {

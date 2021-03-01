@@ -22,13 +22,13 @@
 	display: block;
 }
 
-.isotope-full-grid {
+.full-grid {
 	width: 100vw;
 	max-width: 2000px;
 	height: 100%;
 }
 
-.isotope-half-grid {
+.half-grid {
 	width: 50vw;
 	max-width: 1200px;
 	height: 100%;
@@ -36,8 +36,11 @@
 
 .isotope-stories-grid {
 	width: 100vw;
-	max-width: 1200px;
+	max-width: 1300px;
 	height: 100%;
+	.grid-item {
+		width: 400px;
+	}
 }
 
 .grid-item {
