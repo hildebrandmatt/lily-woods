@@ -31,14 +31,19 @@ get_header();
 			<section class="project-gallery">
 				<h2 class="screen-reader-text">Gallery</h2>
 				<?php $images = get_field('single_project_gallery');
-				$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
 					<div class="isotope-full-grid">
-						<?php foreach( $images as $image_id ): ?>
-							<div class="grid-item">
-								<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-							</div>
-						<?php endforeach; ?>
+					<?php foreach( $images as $image_id ):
+						$imginfo = wp_get_attachment_image_src( $image_id, "full" );
+						if ( $imginfo[1] > $imginfo[2] ) {
+							?><div class="grid-item grid-item-landscape"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
+						}
+						if ( $imginfo[1] < $imginfo[2] ) {
+							?><div class="grid-item grid-item-portrait"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
+						}
+						
+					endforeach; ?>
 					</div>
 				<?php endif; ?>
 			</section> <?php
