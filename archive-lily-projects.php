@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<h1><?php the_title() ?></h1>
+	<h1>www</h1>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -79,7 +79,7 @@ get_header();
 					$query = new WP_Query( $args );
 
 					if ( $query->have_posts() ) {
-						?><div class="isotope-full-grid lightgallery"><?php
+						?><div class="isotope-full-grid" id="lightgallery"><?php
 						while ( $query->have_posts() ) {
 							$query->the_post();
 
@@ -88,14 +88,11 @@ get_header();
 								$size = 'large'; // (thumbnail, medium, large, full or custom size)
 								if( $images ): ?>
 									<?php foreach( $images as $image_id ):
-										$imginfo = wp_get_attachment_image_src( $image_id, "full" );
-										if ( $imginfo[1] > $imginfo[2] ) {
-											?><div class="grid-item grid-item-landscape"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
-										}
-										if ( $imginfo[1] < $imginfo[2] ) {
-											?><div class="grid-item grid-item-portrait"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
-										}
-										
+										?><div class="grid-item">
+											<a href="<?php echo get_permalink() ?>">
+												<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+											</a>
+										</div><?php	
 									endforeach; ?>
 								<?php endif;
 							}
