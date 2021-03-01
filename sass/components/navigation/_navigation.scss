@@ -60,6 +60,9 @@
 	a {
 		display: block;
 		text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        padding: 4px 0px;
 	}
 
 	.current_page_item > a,
@@ -81,9 +84,14 @@
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
-	}
+	.main-navigation{
+        border-top: solid 1px $main_colour;
+        border-bottom: solid 1px $main_colour;
+        ul {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
 }
 
 .comment-navigation,

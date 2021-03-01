@@ -37,7 +37,7 @@ get_header();
 					//check for acf existing
 					if ( function_exists( 'get_field' ) ){
 						if ( get_field('package_price') ){
-							?><p> <?php the_field('package_price') ?> </p><?php
+							?><p class="package-pricing"> <?php the_field('package_price') ?> </p><?php
 						}
 						if ( get_field('number_of_photographers') ){
 							?><p> <?php the_field('number_of_photographers') ?> </p><?php
