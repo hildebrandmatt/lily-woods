@@ -39,29 +39,30 @@ get_header();
 		$query = new WP_Query( $args );
 
 		if ( $query->have_posts() ) {
+            ?><section class="package-group"><?php
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
 				?><section class="package-section">
-					<h2> <?php the_title() ?> </h2> <?php
+					<h2 class="package-title"> <?php the_title() ?> </h2> <?php
 					//check for acf existing
 					if ( function_exists( 'get_field' ) ){
 						if ( get_field('package_price') ){
 							?><p class="package-pricing"> <?php the_field('package_price') ?> </p><?php
 						}
 						if ( get_field('number_of_photographers') ){
-							?><p> <?php the_field('number_of_photographers') ?> </p><?php
+							?><p class="number-photographers"> <?php the_field('number_of_photographers') ?> </p><?php
 						}
 						if ( get_field('package_duration') ){
-							?><p> <?php the_field('package_duration') ?> </p><?php
+							?><p class="package-hours"> <?php the_field('package_duration') ?> </p><?php
 						}
 						if ( get_field('package_description') ){
 							?><p> <?php the_field('package_description') ?> </p><?php
 						}
 					}
 				?></section><?php
-
 			}
+            ?></section> <?php
 			wp_reset_postdata();
 		}
 
