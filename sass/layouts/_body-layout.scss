@@ -31,6 +31,48 @@
   home page
 ---------------------------------------*/
 
+.banner-image {
+  margin-bottom: 80px;
+}
+
+.portfolio-sneak-peek,
+.home-about-section {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.sneak-peek-article {
+  width: 45%;
+  margin: auto;
+  margin-left: 30px;
+}
+
+.home-about-section {
+  img {
+    width: 45%;
+    object-fit: cover;
+  }
+}
+
+.home-about-article {
+  margin: 30px;
+}
+
+.testimonial-section {
+  display: flex;
+  margin: 80px 40px 0 40px;
+  img {
+    object-fit: contain;
+  }
+}
+
+.testimonial-article {
+  width: 400px;
+  margin: auto;
+  p {
+    margin-top: 0px;
+  }
+}
 /*--------------------------------------
   about page
 ---------------------------------------*/

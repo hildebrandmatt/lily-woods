@@ -22,20 +22,22 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			if ( function_exists( 'get_field' ) ){
+			if ( function_exists( 'get_field' ) ){?>
 
-			$image = get_field('banner');
-			$size = 'full'; // (thumbnail, medium, large, full or custom size)
-			if( $image ) {
-				echo wp_get_attachment_image( $image, $size );
-			}?>
+			<div class="banner-image"><?php
+				$image = get_field('banner');
+				$size = 'full'; // (thumbnail, medium, large, full or custom size)
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}?>
+			</div>
 
-			<section id="portfolio-sneak-peek">
+			<section class="portfolio-sneak-peek">
 				<h2 class="screen-reader-text">Portfolio Sneak Peak Gallery</h2>
 				<?php $images = get_field('portfolio_sneak_peek');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
-					<div class="isotope-grid half-grid">
+					<div class="isotope-set-grid half-grid">
 					<?php foreach( $images as $image_id ):
 						?><div class="grid-item">
 							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
@@ -43,7 +45,7 @@ get_header();
 					endforeach; ?>
 					</div>
 				<?php endif; ?>
-				<article id="sneak-peak-article"><?php
+				<article class="sneak-peek-article"><?php
 					?><h3><?php the_field('sneak_peek_title'); ?></h3><?php
 					?><h4><?php the_field('sneak_peek_subtitle'); ?></h4><?php
 					the_field('sneak_peek_text') ?>
@@ -51,15 +53,17 @@ get_header();
 				</article>
 			</section>
 
-			<section id="about-section">
+			<section class="home-about-section">
 				<h2 class="screen-reader-text">About Me</h2>
 				<?php $image = get_field('home_about_image');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $image ) {
 					echo wp_get_attachment_image( $image, $size );
-				}
-				the_field('home_about'); ?>
-				<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+				}?>
+				<article class="home-about-article"><?php
+					the_field('home_about'); ?>
+					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+				</article>
 			</section>
 
 			<section id="featured-gallery">
@@ -67,7 +71,7 @@ get_header();
 				<?php $images = get_field('home_featured_gallery');
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
-					<div class="isotope-grid full-grid" id="lightgallery">
+					<div class="isotope-set-grid full-grid-home" id="lightgallery">
 					<?php foreach( $images as $image_id ):
 						?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>">
 							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
@@ -96,27 +100,22 @@ get_header();
                 while ( $query->have_posts() ) :
                     $query->the_post();
 
-					?><div class="testimonial-div"><?php
 					the_post_thumbnail('medium');
+					?><article class="testimonial-article"><?php
 					if ( get_field('testimonial_text') ){
 						?><p> <?php the_field('testimonial_text') ?> </p><?php
 					}
 					if ( get_field('testimonial_client') ){
 						?><p> <?php the_field('testimonial_client') ?> </p><?php
 					}
-					?></div><?php
-
+					?><a href="<?php echo get_page_link(352) ?>">See our packages here</a>
+					</article><?php
                 	wp_reset_postdata();
 				endwhile;
 				?></section><?php
 			endif;
-
 			}
-
-		endwhile; ?>
-
-		<a href="<?php echo get_page_link(352) ?>">See our packages here</a>
-		
+		endwhile; ?>		
 	</main><!-- #primary -->
 
 <?php
