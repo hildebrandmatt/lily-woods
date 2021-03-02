@@ -85,9 +85,8 @@ get_header();
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-
 				?><section class="extras-section">
-					<h2> <?php the_title() ?> </h2> <?php
+					<?php
 					//check for acf existing
 					if ( function_exists( 'get_field' ) ){
 						if ( get_field('package_price') ){
@@ -100,7 +99,12 @@ get_header();
 							?><p> <?php the_field('package_duration') ?> </p><?php
 						}
 						if ( get_field('package_description') ){
-							?><p> <?php the_field('package_description') ?> </p><?php
+							?>
+                            <div class="extras-description">
+                                <h2> <?php the_title() ?> </h2> 
+                                <p> <?php the_field('package_description') ?> </p>
+                            </div>
+                            <?php
 						}
 					}
 				?></section><?php
