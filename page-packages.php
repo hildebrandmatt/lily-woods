@@ -99,15 +99,15 @@ get_header();
 						}
 						if ( get_field('package_duration') ){
 							?><p> <?php the_field('package_duration') ?> </p><?php
-						}
+						}?>
+						<div class="extras-description">
+							<h2> <?php the_title() ?> </h2> <?php
 						if ( get_field('package_description') ){
 							?>
-                            <div class="extras-description">
-                                <h2> <?php the_title() ?> </h2> 
                                 <p> <?php the_field('package_description') ?> </p>
-                            </div>
                             <?php
-						}
+						}?>
+						</div><?php
 					}
 				?></section><?php
 
