@@ -57,7 +57,7 @@ get_header();
 							?><p class="package-hours"> <?php the_field('package_duration') ?> </p><?php
 						}
 						if ( get_field('package_description') ){
-							?><p> <?php the_field('package_description') ?> </p><?php
+							?><p class="package-summary"> <?php the_field('package_description') ?> </p><?php
 						}
 					}
 				?></section><?php
@@ -80,6 +80,7 @@ get_header();
 				),
 			),
 		);
+        ?><h2 class="sub-heading">Extras</h2><?php
 
 		$query = new WP_Query( $args );
 
@@ -113,8 +114,9 @@ get_header();
 			}
 			wp_reset_postdata();
 		}
-
-		the_field( 'package_notice' );
+        ?><section class="package-notice"><?php
+		the_field( 'package_notice' );?>
+        </section><?php
 
 		?><section id="faq-section">
 		<h2 class="sub-heading">FAQ</h2>
@@ -134,7 +136,7 @@ get_header();
 				// Do something...
 			endif; ?>
 		</section>
-		<a href="<?php echo get_page_link(19) ?>">Get in touch and book your package!</a>
+		<a href="<?php echo get_page_link(19) ?>">Have something in mind? Let's get in touch!</a>
 
 	</main><!-- #main -->
 
