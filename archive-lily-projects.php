@@ -12,7 +12,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 	<h1>Portfolio</h1>
-
+    <h2>Experience their stories</h2>
 		<?php if ( have_posts() ) : ?>
 
 				<nav class="category-nav"><?php
@@ -39,7 +39,7 @@ get_header();
 				/* For stories... */
 				if ( $category == "Stories") :
 				/* Start the Loop */
-					?><h2>Experience their stories</h2>
+					?>
 					<div class="isotope-stories-grid"><?php
 					$i = 0;
 					while ( have_posts() ) :

@@ -11,7 +11,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<h1 class="screen-reader-text"><?php the_title() ?></h1>
+	<h1 class="single-project-title"><?php the_title() ?></h1>
+    <?php
+        $post_date = get_the_date( 'F j, Y' );?>
+    <h2 class="single-project-date"><?php echo $post_date;?></h2>
 
 		<?php
 		while ( have_posts() ) :
@@ -19,7 +22,7 @@ get_header();
 
 			if ( function_exists( 'get_field' ) ){
 
-			the_post_thumbnail('large');
+			the_post_thumbnail();
 
 			?><section class="project-description">
 				<h2 class="screen-reader-text">Project Description</h2><?php
@@ -52,7 +55,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my other projects!</a>
+		<a class="project-cta" href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my other projects!</a>
 
 	</main><!-- #main -->
 

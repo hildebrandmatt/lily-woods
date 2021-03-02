@@ -12,8 +12,9 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+        <h2 class="footer-title">follow along on instagram</h2>
 		<?php echo do_shortcode( '[instagram-feed num=4 cols=4]' ); ?>
-		<a href="<?php echo get_page_link(19) ?>">Check out my Facebook</a>
+		<a class="social-link" href="<?php echo get_page_link(19) ?>">Check out my Facebook</a>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

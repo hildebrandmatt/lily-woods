@@ -1,4 +1,56 @@
-.site{
+/*--------------------------------------
+  all pages
+---------------------------------------*/
+
+header,
+.site-main{
     max-width: 885px;
     margin: auto;
+    margin-bottom: 100px;
+}
+
+.sb_instagram_header,
+#sbi_load {
+    display: none;
+}
+
+footer{
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+/*--------------------------------------
+  home page
+---------------------------------------*/
+
+/*--------------------------------------
+  about page
+---------------------------------------*/
+
+/*--------------------------------------
+  portfolio page - single
+---------------------------------------*/
+.project-description{
+    margin: 30px 0px 35px 0px;
+}
+
+/*--------------------------------------
+  packages page
+---------------------------------------*/
+
+/*--------------------------------------
+  contact page
+---------------------------------------*/
+
+//media query
+.contact-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form,
+.contact-info{
+    width: 45%;
 }

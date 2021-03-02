@@ -22,6 +22,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
+            <div class="contact-wrapper">
             <section class="contact-form">
 				<h2 class="screen-reader-text">Contact Form</h2>
                 <?php echo do_shortcode( '[forminator_form id="369"]' ); ?>
@@ -47,7 +48,7 @@ get_header();
 					}
 				}?>
 			</section>
-
+            </div>
 		<?php endwhile; // End of the loop.
 		?>
 
