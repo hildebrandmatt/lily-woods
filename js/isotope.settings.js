@@ -17,7 +17,7 @@ jQuery(document).ready( function($) {
         percentPosition: true,
         layoutMode: 'packery',
         packery: {
-            gutter: 5,
+            gutter: 15,
         },
         sortBy: 'random'
     });

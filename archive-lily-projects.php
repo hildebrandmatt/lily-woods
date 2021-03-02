@@ -41,8 +41,10 @@ get_header();
 				/* Start the Loop */
 					?><h2>Experience their stories</h2>
 					<div class="isotope-stories-grid"><?php
+					$i = 0;
 					while ( have_posts() ) :
 						the_post();
+						
 
 						if ( function_exists( 'get_field' ) ){
 						/*
@@ -51,10 +53,10 @@ get_header();
 						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
 						*/
 						//get_template_part( 'template-parts/content', get_post_type() );
-						?><div class="grid-item">
-							<a href="<?php the_permalink() ?>"><?php
-							the_post_thumbnail('large');
-							?><h2><?php the_title(); ?></h2></a>
+						?><div class="grid-item">							
+						<a href="<?php the_permalink() ?>"><?php
+						the_post_thumbnail('large');
+						?><h2><?php the_title(); ?></h2></a>
 						</div><?php
 
 						}
