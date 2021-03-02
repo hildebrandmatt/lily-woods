@@ -49,15 +49,41 @@ textarea {
 #name-2{
     display: flex;
     justify-content: space-between;
+	width: 100%;
 }
 
 #forminator-field-date-1-month,
 #forminator-field-date-1-day,
 #forminator-field-date-1-year{
-    width: 30%;
+    width: 100px;
 }
 
-.forminator-date-input{
+.forminator-date-input.forminator-row.forminator-col {
+	width: 100px;
+}
+
+.forminator-row{
     display: flex;
     justify-content: space-between;
+	margin-bottom: 0px !important;
+}
+
+.forminator-col{
+	margin-bottom: 0px !important;
+	width: 100%;
+}
+
+.forminator-custom-form {
+	.forminator-row {
+		padding-bottom: 20px;
+		.forminator-row {
+			padding-bottom: 0px;
+		}
+	}
+}
+
+.forminator-input,
+.forminator-value,
+.forminator-textarea {
+	border-radius: 10px !important;
 }
