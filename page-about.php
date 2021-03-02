@@ -25,28 +25,32 @@ get_header();
 			if ( function_exists( 'get_field' ) ){
 
 			?>
-			<section id="about-lily-woods">
-				<h2>About Lily Woods</h2>
-				<div id="about-section-top"><?php
+			<section class="about-lily-woods">
+				<div class="about-section"><?php
 					$image = get_field('about_photographer_image');
 					$size = 'large'; // (thumbnail, medium, large, full or custom size)
 					if( $image ) {
-						echo wp_get_attachment_image( $image, $size );
+						?><div class="about-image"><?php
+							echo wp_get_attachment_image( $image, $size );
+						?></div><?php
 					}?>
 
-					<article id="about-text-top">
-						<h3><?php the_field('about_photographer_title'); ?></h3>
+					<article class="about-text">
+						<h2><?php the_field('about_photographer_title'); ?></h2>
 						<p><?php the_field('about_photographer_description'); ?></p>
 					</article>
 				</div>
 
-				<div id="about-section-bottom">
-					<p><?php the_field('about_photographer_description_cont'); ?></p>
+				<div class="about-section">
+					<article class="about-text">
+						<p><?php the_field('about_photographer_description_cont'); ?></p>
+						<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+					</article>
 
 					<?php $images = get_field('about_photographer_gallery');
 					$size = 'large'; // (thumbnail, medium, large, full or custom size)
 					if( $images ): ?>
-						<div class="isotope-grid half-grid">
+						<div class="isotope-set-grid half-grid">
 						<?php foreach( $images as $image_id ):
 							$imginfo = wp_get_attachment_image_src( $image_id, "full" );
 							if ( $imginfo[1] > $imginfo[2] ) {
@@ -58,11 +62,10 @@ get_header();
 						endforeach; ?>
 						</div>
 					<?php endif; ?>
-					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
 				</div>
 			</section>
 
-			<section id="associate-photographers">
+			<section class="associate-photographers">
 				<h2>Meet my associates!</h2>
 				<?php
 				// Check rows exists.
@@ -71,15 +74,17 @@ get_header();
 					while( have_rows('associate_about_repeater') ) : the_row();
 						// Load sub field value. ?>						
 
-						<article class="about-article"><?php
+						<div class="about-section"><?php
 							$image = get_sub_field('associate_about_photo');
 							$size = 'medium'; // (thumbnail, medium, large, full or custom size)
 							if( $image ) {
 								echo wp_get_attachment_image( $image, $size );
 							}?>
-							<h3><?php the_sub_field('associate_about_title'); ?></h3>
-							<p><?php the_sub_field('associate_about_text'); ?></p>
-						</article>
+							<article class="associate-article">
+								<h3><?php the_sub_field('associate_about_title'); ?></h3>
+								<p><?php the_sub_field('associate_about_text'); ?></p>
+							</article>
+						</div>
 					<?php endwhile;
 				// No value.
 				else :

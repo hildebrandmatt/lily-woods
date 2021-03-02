@@ -26,12 +26,28 @@
 	width: 100vw;
 	max-width: 900px;
 	height: 100%;
+
+	.grid-item {
+		margin-bottom: 0px;
+		width: 290px;
+		img {
+			display: block;
+		}
+	}
 }
 
 .half-grid {
 	width: 50vw;
 	max-width: 445px;
 	height: 100%;
+
+	.grid-item {
+		margin-bottom: 0px;
+		width: 215px;
+		img {
+			display: block;
+		}
+	}
 }
 
 .isotope-stories-grid {
@@ -41,13 +57,5 @@
 	.grid-item {
 		width: 290px;
 		height: 300px;
-	}
-}
-
-.grid-item {
-	margin-bottom: 0px;
-	width: 290px;
-	img {
-		display: block;
 	}
 }

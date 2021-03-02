@@ -29,6 +29,30 @@ footer{
   about page
 ---------------------------------------*/
 
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  
+  .about-text,
+  .about-image {
+    width: 45%;
+    margin: auto;
+  }
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.associate-photographers h2 {
+  margin-bottom: 40px;
+}
+
+.associate-article {
+  margin: 40px;
+}
+
 /*--------------------------------------
   portfolio page - single
 ---------------------------------------*/
