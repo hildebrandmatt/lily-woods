@@ -24,6 +24,16 @@ get_header();
 		$args = array(
 			'post_type' => 'lily-packages',
 			'posts_per_page' => -1,
+			'order'		=> 'ASC',
+			'orderby'	=> 'meta_value_num',
+			'meta_key'	=> 'order_number',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'lily-package-type',
+					'field' => 'slug',
+					'terms' => 'packages'
+				),
+			),
 		);
 
 		$query = new WP_Query( $args );
@@ -38,6 +48,50 @@ get_header();
 					if ( function_exists( 'get_field' ) ){
 						if ( get_field('package_price') ){
 							?><p class="package-pricing"> <?php the_field('package_price') ?> </p><?php
+						}
+						if ( get_field('number_of_photographers') ){
+							?><p> <?php the_field('number_of_photographers') ?> </p><?php
+						}
+						if ( get_field('package_duration') ){
+							?><p> <?php the_field('package_duration') ?> </p><?php
+						}
+						if ( get_field('package_description') ){
+							?><p> <?php the_field('package_description') ?> </p><?php
+						}
+					}
+				?></section><?php
+
+			}
+			wp_reset_postdata();
+		}
+
+		$args = array(
+			'post_type' => 'lily-packages',
+			'posts_per_page' => -1,
+			'order'		=> 'ASC',
+			'orderby'	=> 'meta_value_num',
+			'meta_key'	=> 'order_number',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'lily-package-type',
+					'field' => 'slug',
+					'terms' => 'extras'
+				),
+			),
+		);
+
+		$query = new WP_Query( $args );
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+
+				?><section class="extras-section">
+					<h2> <?php the_title() ?> </h2> <?php
+					//check for acf existing
+					if ( function_exists( 'get_field' ) ){
+						if ( get_field('package_price') ){
+							?><p class="extras-pricing"> <?php the_field('package_price') ?> </p><?php
 						}
 						if ( get_field('number_of_photographers') ){
 							?><p> <?php the_field('number_of_photographers') ?> </p><?php

@@ -19,6 +19,5 @@ jQuery(document).ready( function($) {
         packery: {
             gutter: 15,
         },
-        sortBy: 'random'
     });
 });
