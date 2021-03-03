@@ -26,3 +26,13 @@ a {
     text-align: center;
     margin-top: 50px;
 }
+
+.contact-info {
+	a {
+		display: inline;
+		text-decoration: none;
+		p {
+			display: inline;
+		}
+	}
+}

@@ -35,11 +35,12 @@ get_header();
 				if ( function_exists( 'get_field' ) ){?>
 
 					<p><?php the_field('contact_package_info'); ?></p>
-					<a href="tel:<?php the_field('contact_phone') ?>">
-						<p><?php the_field('contact_phone'); ?></p>
-					</a>
 					<a href="mailto:<?php the_field('contact_email') ?>">
 						<p><?php the_field('contact_email'); ?></p>
+					</a>
+					<br>
+					<a href="tel:<?php the_field('contact_phone') ?>">
+						<p><?php the_field('contact_phone'); ?></p>
 					</a><?php
 
 					$image = get_field('contact_photo');
