@@ -79,6 +79,10 @@
 	display: block;
 }
 
+.category-nav a:not(.a-underlined) {
+	text-decoration: none;
+}
+
 @media screen and (min-width: 37.5em) {
 
 	.menu-toggle {
