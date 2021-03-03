@@ -24,7 +24,8 @@ get_header();
 
             <div class="contact-wrapper">
             <section class="contact-form">
-				<h2 class="screen-reader-text">Contact Form</h2>
+				<h2><?php the_field('contact_form_info_title') ?></h2>
+				<p><?php the_field('contact_form_info') ?></p>
                 <?php echo do_shortcode( '[forminator_form id="369"]' ); ?>
             </section>
 
