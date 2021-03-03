@@ -34,6 +34,7 @@ get_header();
 				//check for acf existing
 				if ( function_exists( 'get_field' ) ){?>
 
+				    <h2><?php the_field('contact_package_info_title') ?></h2>
 					<p><?php the_field('contact_package_info'); ?></p>
 					<a href="mailto:<?php the_field('contact_email') ?>">
 						<p><?php the_field('contact_email'); ?></p>

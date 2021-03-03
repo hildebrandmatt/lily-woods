@@ -46,10 +46,10 @@ get_header();
 					</div>
 				<?php endif; ?>
 				<article class="sneak-peek-article"><?php
-					?><h3><?php the_field('sneak_peek_title'); ?></h3><?php
-					?><h4><?php the_field('sneak_peek_subtitle'); ?></h4><?php
+					?><h2 class="sub-heading-home"><?php the_field('sneak_peek_title'); ?></h2><?php
+					?><h3><?php the_field('sneak_peek_subtitle'); ?></h3><?php
 					the_field('sneak_peek_text') ?>
-					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">See their stories</a>
 				</article>
 			</section>
 
@@ -62,7 +62,7 @@ get_header();
 				}?>
 				<article class="home-about-article"><?php
 					the_field('home_about'); ?>
-					<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+					<a href="<?php echo get_page_link(16) ?>">Read more about me</a>
 				</article>
 			</section>
 

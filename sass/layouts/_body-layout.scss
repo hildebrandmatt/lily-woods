@@ -1,6 +1,11 @@
 /*--------------------------------------
   all pages
 ---------------------------------------*/
+.site-branding{
+    margin: 45px 0px 15px 0px;
+    text-align: center;
+}
+
 .site-main{
     padding: 0px 15px;
 }
@@ -36,9 +41,15 @@
 }
 
 .portfolio-sneak-peek,
+.home-about-section,
+#featured-gallery,
+.testimonal-section{
+    margin-bottom: 120px;
+}
+
+.portfolio-sneak-peek,
 .home-about-section {
   display: flex;
-  margin-bottom: 80px;
 }
 
 .sneak-peek-article {
