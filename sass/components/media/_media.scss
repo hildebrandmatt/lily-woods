@@ -11,3 +11,25 @@
 .custom-logo-link {
 	display: inline-block;
 }
+
+.banner-image {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	img {
+		position: relative;
+		object-fit: cover;
+	}
+}
+
+@media (min-width: 1200px) {
+	.banner-image {
+		img {
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+	}
+}

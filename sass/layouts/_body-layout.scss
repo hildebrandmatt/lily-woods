@@ -36,6 +36,25 @@
   home page
 ---------------------------------------*/
 
+.page-id-13 {
+  .site-header {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    img {
+      filter: brightness(0) invert(100%);
+      -webkit-filter: brightness(0) invert(100%);
+    }
+    a {      
+      color: white;
+    }
+  }
+  .main-navigation {
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+  }
+}
+
 .banner-image {
   margin-bottom: 80px;
 }
