@@ -1,3 +1,5 @@
 jQuery(document).ready(function($) {
-    $('#lightgallery').lightGallery();
+    $('#lightgallery').lightGallery({
+        download: false
+    });
 });
