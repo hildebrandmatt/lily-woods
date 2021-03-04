@@ -65,44 +65,57 @@ textarea {
 	max-width: 100px;
 }
 
-.contact-wrapper .forminator-ui.forminator-custom-form[data-design=default] .forminator-select-container .forminator-select-list .forminator-dropdown-list {
-	margin-top: -8px;
-	padding-top: 8px;
-}
+.contact-form {
 
-.forminator-row {
-	display: flex;
-	justify-content: space-between;
-}
+	.forminator-row {
+		display: flex;
+		justify-content: space-between;
+	}
 
-.contact-form .forminator-ui.forminator-custom-form[data-grid=open] .forminator-row:not(:last-child) {	
-	margin-bottom: 0px;
-}
+	.forminator-col {	
+		width: 100%;
+	}
 
-.forminator-col {	
-	width: 100%;
-}
+	.forminator-custom-form {
 
-.contact-form .forminator-ui.forminator-custom-form[data-grid=open] .forminator-col:not(:last-child) {
-	margin-bottom: 0px;
-}
+		.forminator-row {
+			padding-bottom: 20px;
+		}
 
-.forminator-custom-form .forminator-row {
-	padding-bottom: 20px;
-}
-.forminator-custom-form .forminator-row .forminator-row {
-	padding-bottom: 0px;
-}
+		.forminator-row .forminator-row {
+			padding-bottom: 0px;
+		}
+	}
 
-.contact-wrapper .forminator-ui.forminator-custom-form[data-design=default] .forminator-input,
-.contact-wrapper .forminator-ui.forminator-custom-form[data-design=default] .forminator-textarea,
-.contact-wrapper .forminator-ui.forminator-custom-form[data-design=default] .forminator-select-container .forminator-select-list .forminator-value {
-	border-radius: 8px;
-	background-color: #f5f5f5;
-}
+	.forminator-ui.forminator-custom-form-369.forminator-design--default .forminator-button-submit{
+		background-color: #fff;
+		color: $main_colour;
+		border: solid 1px $main_colour;
+	}
+	
 
-.contact-wrapper .forminator-ui.forminator-custom-form-369.forminator-design--default .forminator-button-submit{
-    background-color: #fff;
-    color: $main_colour;
-    border: solid 1px $main_colour;
+	.forminator-ui.forminator-custom-form[data-grid=open] {
+		.forminator-row:not(:last-child) {	
+			margin-bottom: 0px;
+		}
+
+		.forminator-col:not(:last-child) {
+			margin-bottom: 0px;
+		}
+	}
+
+	.forminator-ui.forminator-custom-form[data-design=default] {
+
+		.forminator-select-container .forminator-select-list .forminator-dropdown-list {
+			margin-top: -8px;
+			padding-top: 8px;
+		}
+
+		.forminator-input,
+		.forminator-textarea,
+		.forminator-select-container .forminator-select-list .forminator-value {
+			border-radius: 8px;
+			background-color: #f5f5f5;
+		}
+	}
 }
