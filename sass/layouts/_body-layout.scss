@@ -199,7 +199,6 @@
 
 .package-notice{
     margin: 20px 0px 60px 0px;
-    text-align: center;
     font-style: italic;
 }
 
@@ -210,7 +209,11 @@
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
-    
+
+    .package-notice{
+        text-align: center;
+    }
+
     .package-section{
         margin: 0px;
     }
