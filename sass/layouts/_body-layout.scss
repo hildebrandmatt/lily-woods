@@ -261,16 +261,21 @@
 /*--------------------------------------
   contact page
 ---------------------------------------*/
-
+.contact-wrapper {
+  max-width: 30em; //480px
+  margin: auto;
+}
 //media query
-@media (min-width: 900px) {
+@media (min-width: $breakpoint-desktop) {
   .contact-wrapper{
-      display: flex;
-      justify-content: space-between;
+    max-width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .contact-form,
   .contact-info{
-      width: 45%;
+    width: 45%;
   }
 }

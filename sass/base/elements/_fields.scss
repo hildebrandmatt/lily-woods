@@ -91,8 +91,7 @@ textarea {
 		background-color: #fff;
 		color: $main_colour;
 		border: solid 1px $main_colour;
-	}
-	
+	}	
 
 	.forminator-ui.forminator-custom-form[data-grid=open] {
 		.forminator-row:not(:last-child) {	
@@ -102,6 +101,10 @@ textarea {
 		.forminator-col:not(:last-child) {
 			margin-bottom: 0px;
 		}
+	}
+
+	.forminator-ui.forminator-custom-form:not(.forminator-size--small)[data-grid=open] .forminator-row:not(:last-child) {
+		margin-bottom: 0px;
 	}
 
 	.forminator-ui.forminator-custom-form[data-design=default] {
