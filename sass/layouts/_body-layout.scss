@@ -225,12 +225,14 @@
 ---------------------------------------*/
 
 //media query
-.contact-wrapper{
-    display: flex;
-    justify-content: space-between;
-}
+@media (min-width: 900px) {
+  .contact-wrapper{
+      display: flex;
+      justify-content: space-between;
+  }
 
-.contact-form,
-.contact-info{
-    width: 45%;
+  .contact-form,
+  .contact-info{
+      width: 45%;
+  }
 }
