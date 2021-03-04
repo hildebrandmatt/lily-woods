@@ -12,7 +12,7 @@ a {
 	}
 
 	&:focus {
-		outline: thin dotted;
+		outline: solid 2px $main_colour;
 	}
 
 	&:hover,
@@ -35,4 +35,19 @@ a {
 			display: inline;
 		}
 	}
+}
+
+.social-link-group{
+display: flex;
+justify-content: space-between;
+width: 200px;
+margin: auto;
+margin-top: 40px;
+margin-bottom: 12px;
+}
+
+.social-link{
+    display: block;
+    width: 200px;
+    margin: auto;
 }
