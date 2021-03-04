@@ -60,7 +60,7 @@ get_header();
 						?><div class="grid-item">							
 						<a href="<?php the_permalink() ?>"><?php
 						the_post_thumbnail('large');
-						?><h2><?php the_title(); ?></h2></a>
+						?><p class="project-title-link"><?php the_title(); ?></p></a>
 						</div><?php
 
 						}
