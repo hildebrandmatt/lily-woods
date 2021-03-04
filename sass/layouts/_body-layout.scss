@@ -8,6 +8,7 @@
 
 .site-main{
     padding: 0px 15px;
+    margin-bottom: 100px;
 }
 
 .sb_instagram_header,
@@ -15,13 +16,18 @@
     display: none;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $breakpoint-large-phone){
+    .site-main{
+        padding: 0px 25px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
     header,
     .site-main{
         padding: 0;
         max-width: 885px;
         margin: auto;
-        margin-bottom: 100px;
     }
 
     footer{
@@ -163,6 +169,17 @@
 
 .package-section{
     text-align: center;
+    padding: 25px 0px;
+    margin: 15px 30px;
+    border-bottom: solid 1px $main_colour;
+}
+
+.package-section:nth-child(4){
+    border-bottom: none;
+}
+
+.extras-section{
+    margin: 0px 20px;
 }
 
 .extras-pricing{
@@ -172,10 +189,12 @@
 
 .extras-details{
     margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 .extras-title{
     margin-bottom: 5px;
+    text-align: left;
 }
 
 .package-notice{
@@ -184,13 +203,24 @@
     font-style: italic;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: $breakpoint-large-phone){
+    .extras-section{
+        margin: 0px 40px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
     
+    .package-section{
+        margin: 0px;
+    }
+
     .package-section:nth-child(1),
     .package-section:nth-child(2){
         width: 50%;
         padding: 20px 70px 30px 70px;
         margin-bottom: 40px;
+        border-bottom: none;
     }
 
     .package-section:nth-child(1){
@@ -203,6 +233,7 @@
         padding: 10px 70px;
         border-left: solid 1px $main_colour;
         border-right: solid 1px $main_colour;
+        border-bottom: none;
     }
 
     .extras-section{
@@ -216,6 +247,10 @@
         h2{
             text-align: left;
         }
+    }
+
+    .extras-details{
+        margin-bottom: 10px;
     }
 }
 
