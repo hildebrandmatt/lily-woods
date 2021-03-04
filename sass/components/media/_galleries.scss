@@ -22,6 +22,8 @@
 	display: block;
 }
 
+// Isotope gallery styling
+
 .full-grid {
 	width: 100%;
 	max-width: 900px;
@@ -29,7 +31,7 @@
 
 	.grid-item {
 		margin-bottom: 0px;
-		width: 290px;
+		width: 100%;
 		img {
 			display: block;
 		}
@@ -38,7 +40,23 @@
 
 .full-grid-home {
 	width: 100%;
-	max-width: 905px;
+	height: 100%;
+	margin: 0px;
+
+	.grid-item {
+		margin-bottom: 0px;
+		width: 100%;
+		img {
+			display: block;
+		}
+	}
+	.grid-item:nth-child(even) {
+		display: none;
+	}
+}
+
+.half-grid {
+	width: 445px;
 	height: 100%;
 
 	.grid-item {
@@ -48,39 +66,119 @@
 			display: block;
 		}
 	}
-}
-
-.half-grid {
-	width: 50vw;
-	max-width: 445px;
-	height: 100%;
-
-	.grid-item {
-		margin-bottom: 0px;
-		width: 215px;
-		img {
-			display: block;
-		}
+	.grid-item:nth-child(even) {
+		display: none;
 	}
 }
 
 .portfolio-sneak-peek {
 	.half-grid {
-		width: 60vw;
-		max-width: 545px;
-
-		.grid-item {
-			width: 265px;
-		}
+		display: none;
 	}
 }
 
 .isotope-stories-grid {
 	width: 100%;
-	max-width: 900px;
+	max-width: 885px;
 	height: 100%;
 	.grid-item {
-		width: 290px;
-		height: 300px;
+		width: 100%;
+	}
+}
+
+@media (min-width: 420px) {
+
+	.full-grid-home,
+	.full-grid {
+		.grid-item {
+			width: calc(50% - 2.5px);
+		}
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+
+	.portfolio-sneak-peek {
+		.half-grid {
+			display: block;
+			width: 40%;
+			max-width: 240px;
+	
+			.grid-item {
+				width: 100%;
+			}
+			.grid-item:nth-child(even) {
+				display: none;
+			}
+		}
+	}
+
+	.half-grid {
+		.grid-item:nth-child(even) {
+			display: block;
+		}
+	}
+
+	.isotope-stories-grid {
+		.grid-item {
+			width: calc(50% - 7.5px);
+			height: 36vw;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-desktop) {
+
+	.full-grid {	
+		.grid-item {
+			width: 290px;
+		}
+	}
+	
+	.full-grid-home {
+		width: 875px;
+		margin: 0 5px;
+	
+		.grid-item {
+			width: 215px;
+		}
+		.grid-item:nth-child(even) {
+			display: block;
+		}
+	}
+	
+	.half-grid {
+		width: 445px;
+		height: 100%;
+	
+		.grid-item {
+			margin-bottom: 0px;
+			width: 215px;
+			img {
+				display: block;
+			}
+		}
+	}
+	
+	.portfolio-sneak-peek {
+		.half-grid {
+			max-width: 545px;
+			min-width: 545px;
+	
+			.grid-item {
+				width: 265px;
+			}
+			.grid-item:nth-child(even) {
+				display: block;
+			}
+		}
+	}
+	
+	.isotope-stories-grid {
+		width:885px;
+		.grid-item {
+			width: 280px;
+			height: 260px;
+		}
 	}
 }
