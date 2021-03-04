@@ -44,7 +44,7 @@ get_header();
 				<div class="about-section">
 					<article class="about-text">
 						<p><?php the_field('about_photographer_description_cont'); ?></p>
-						<a href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
+						<a class="about-project-link" href="<?php echo get_post_type_archive_link( 'lily-projects' ) ?>">Check out my portfolio!</a>
 					</article>
 
 					<?php $images = get_field('about_photographer_gallery');
@@ -66,7 +66,7 @@ get_header();
 			</section>
 
 			<section class="associate-photographers">
-				<h2>Meet my associates!</h2>
+				<h2 class="sub-heading">Meet my associates</h2>
 				<?php
 				// Check rows exists.
 				if( have_rows('associate_about_repeater') ):
@@ -82,7 +82,7 @@ get_header();
 							}?>
 							<article class="associate-article">
 								<h3><?php the_sub_field('associate_about_title'); ?></h3>
-								<p><?php the_sub_field('associate_about_text'); ?></p>
+								<p class="associate-description"><?php the_sub_field('associate_about_text'); ?></p>
 							</article>
 						</div>
 					<?php endwhile;

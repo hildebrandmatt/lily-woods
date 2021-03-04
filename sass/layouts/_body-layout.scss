@@ -113,29 +113,67 @@
   about page
 ---------------------------------------*/
 
-.about-section {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 70px;
-  
-  .about-text,
-  .about-image {
-    width: 45%;
-    margin: auto;
-  }
-
-  img {
-    object-fit: contain;
-  }
+.about-lily-woods{
+    margin-top: 60px;
 }
 
-.associate-photographers h2 {
-  margin-bottom: 40px;
+.associate-description{
+    margin-bottom: 45px;
 }
 
-.associate-article {
-  margin: 40px;
+@media screen and (min-width: $breakpoint-tablet){
+    .about-lily-woods,
+    .associate-photographers{
+        width: 600px;
+        margin: auto;
+    }
+
+    .about-lily-woods{
+        margin-top: 60px;
+    }
+
+    .attachment-medium{
+        text-align: center;
+    }
 }
+
+@media screen and (min-width: $breakpoint-desktop){
+
+    .about-lily-woods,
+    .associate-photographers{
+        width: 885px;
+        margin: auto;
+    }
+
+    .about-lily-woods{
+        margin-top: 60px;
+    }
+
+    .about-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    
+    .about-text,
+    .about-image {
+        width: 45%;
+        margin: auto;
+    }
+
+    img {
+        object-fit: contain;
+    }
+    }
+
+    .associate-photographers h2 {
+    margin-bottom: 40px;
+    }
+
+    .associate-article {
+    margin: 40px;
+    }
+}
+
 
 /*--------------------------------------
   portfolio page - single
@@ -202,6 +240,10 @@
     font-style: italic;
 }
 
+#faq-section{
+    margin: 0px 20px;
+}
+
 @media screen and (min-width: $breakpoint-large-phone){
     .extras-section{
         margin: 0px 40px;
@@ -254,6 +296,10 @@
 
     .extras-details{
         margin-bottom: 10px;
+    }
+
+    #faq-section{
+        margin: 0px;
     }
 }
 
