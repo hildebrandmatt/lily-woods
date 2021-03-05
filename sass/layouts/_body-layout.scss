@@ -55,10 +55,6 @@
       color: white;
     }
   }
-  .main-navigation {
-    border-top: solid 1px white;
-    border-bottom: solid 1px white;
-  }
 }
 
 .banner-image {
@@ -114,40 +110,48 @@
 
 @media (min-width: $breakpoint-tablet) {
 
+    .page-id-13{
+        .main-navigation {
+            border-top: solid 1px white;
+            border-bottom: solid 1px white;
+          }
+    }
+
   .sneak-peek-article {
     width: 45%;
   }
 
-  .portfolio-sneak-peek,
-  .home-about-section {
+    .portfolio-sneak-peek,
+    .home-about-section {
     display: flex;
     justify-content: space-around;
-  }
-
-  .portfolio-sneak-peek {
-    margin-top: 30px;
-  }
-
-  .home-about-section {
-    img {
-      width: 45%;
-      object-fit: cover;
     }
-  }
 
-  .testimonial-section {
+    .portfolio-sneak-peek {
+    margin-top: 30px;
+    }
+
+    .home-about-section {
+    img {
+        width: 45%;
+        object-fit: cover;
+    }
+    }
+
+    .testimonial-section {
     display: flex;
     margin: 80px 40px 0 40px;
     img {
-      width: 50%;
-      object-fit: contain;
+        width: 50%;
+        object-fit: contain;
     }
-  }
+    }
 
-  .testimonial-article {
+    .testimonial-article {
     margin: auto 0px auto 30px;
-  }
+    }
 }
+
 
 /*--------------------------------------
   about page
