@@ -25,7 +25,7 @@ get_header();
 				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 					foreach ( $terms as $term ) {
 						?><a href="<?php strtok($_SERVER["REQUEST_URI"], '?') ?>?id=<?php echo $term->name ?>"<?php
-						if ( $_GET['id'] == $term->name ) {
+						if ( $_GET['id'] == $term->name || ( $_GET['id'] == "" && $term->name == "Stories" ) ) {
 							?> class="a-underlined"<?php
 						}?>
 						><?php echo $term->name ?></a><?php

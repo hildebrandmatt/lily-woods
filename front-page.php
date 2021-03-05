@@ -100,7 +100,7 @@ get_header();
                 while ( $query->have_posts() ) :
                     $query->the_post();
 
-					the_post_thumbnail('medium');
+					the_post_thumbnail('large');
 					?><article class="testimonial-article"><?php
 					if ( get_field('testimonial_text') ){
 						?><p> <?php the_field('testimonial_text') ?> </p><?php
