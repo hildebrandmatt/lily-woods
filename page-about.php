@@ -74,17 +74,18 @@ get_header();
 					while( have_rows('associate_about_repeater') ) : the_row();
 						// Load sub field value. ?>						
 
-						<div class="about-section"><?php
-							$image = get_sub_field('associate_about_photo');
-							$size = 'medium'; // (thumbnail, medium, large, full or custom size)
-							if( $image ) {
-								echo wp_get_attachment_image( $image, $size );
-							}?>
-							<article class="associate-article">
-								<h3><?php the_sub_field('associate_about_title'); ?></h3>
-								<p class="associate-description"><?php the_sub_field('associate_about_text'); ?></p>
-							</article>
-						</div>
+                        <article class="associate-article"><?php
+                            $image = get_sub_field('associate_about_photo');
+                            $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+                            if( $image ) {
+                                echo wp_get_attachment_image( $image, $size, "", ["class" => "alignleft"]  );
+                            }?>
+                            <div class="associate-description-group">
+                                <h3 class="associate-name"><?php the_sub_field('associate_about_title'); ?></h3>
+                                <p class="associate-description"><?php the_sub_field('associate_about_text'); ?></p>
+                            </div>
+                        </article>
+
 					<?php endwhile;
 				// No value.
 				else :

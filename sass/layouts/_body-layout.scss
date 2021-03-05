@@ -132,8 +132,8 @@
         margin-top: 60px;
     }
 
-    .attachment-medium{
-        text-align: center;
+    .about-section:nth-child(2){
+        margin-bottom: 80px;
     }
 }
 
@@ -150,10 +150,11 @@
     }
 
     .about-section {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 70px;
-    
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 70px;
+    }
+
     .about-text,
     .about-image {
         width: 45%;
@@ -163,17 +164,19 @@
     img {
         object-fit: contain;
     }
-    }
 
     .associate-photographers h2 {
-    margin-bottom: 40px;
+        margin-bottom: 40px;
     }
 
     .associate-article {
-    margin: 40px;
+        display: flex;
+    }
+
+    .associate-description-group{
+        margin: 40px;
     }
 }
-
 
 /*--------------------------------------
   portfolio page - single
