@@ -91,6 +91,10 @@ textarea {
 		background-color: #fff;
 		color: $main_colour;
 		border: solid 1px $main_colour;
+        &:hover{
+            background-color: $accent_colour;
+            color: $main_colour;
+        }
 	}	
 
 	.forminator-ui.forminator-custom-form[data-grid=open] {
