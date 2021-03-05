@@ -114,12 +114,18 @@
         .main-navigation {
             border-top: solid 1px white;
             border-bottom: solid 1px white;
-          }
+        
+        }
+        .site-header a{
+            &:focus{
+                outline: solid 3px $accent_colour;
+            }
+        }
     }
 
-  .sneak-peek-article {
+    .sneak-peek-article {
     width: 45%;
-  }
+    }
 
     .portfolio-sneak-peek,
     .home-about-section {
