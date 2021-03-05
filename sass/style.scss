@@ -94,6 +94,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "plugins/lightgallery";
 
+/* Slick slider
+--------------------------------------------- */
+@import "plugins/slick/slick";
+@import "plugins/slick/slick-theme";
+
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
