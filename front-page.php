@@ -88,31 +88,36 @@ get_header();
 			$args = array(
                 'post_type' => 'lily-testimonials',
 				'orderby'	=> 'rand',
-                'posts_per_page' => 1,
+                'posts_per_page' => -1,
             );
 
             $query = new WP_Query( $args );
 
             if ( $query->have_posts() ) :
 				?><section class="testimonial-section">
-				<h2 class="screen-reader-text">Testimonial</h2>
-				<?php
-                while ( $query->have_posts() ) :
-                    $query->the_post();
+					<h2 class="screen-reader-text">Testimonial</h2>
+					<div class="carousel">
+						<?php
+						while ( $query->have_posts() ) :
+							$query->the_post();
 
-					the_post_thumbnail('large');
-					?><article class="testimonial-article"><?php
-					if ( get_field('testimonial_text') ){
-						?><p> <?php the_field('testimonial_text') ?> </p><?php
-					}
-					if ( get_field('testimonial_client') ){
-						?><p> <?php the_field('testimonial_client') ?> </p><?php
-					}
-					?><a href="<?php echo get_page_link(352) ?>">See our packages here</a>
-					</article><?php
-                	wp_reset_postdata();
-				endwhile;
-				?></section><?php
+							?><div class="testimonial"><?php
+
+								the_post_thumbnail('large');
+								?><article class="testimonial-article"><?php
+								if ( get_field('testimonial_text') ){
+									?><p> <?php the_field('testimonial_text') ?> </p><?php
+								}
+								if ( get_field('testimonial_client') ){
+									?><p> <?php the_field('testimonial_client') ?> </p><?php
+								}
+								?><a href="<?php echo get_page_link(352) ?>">See our packages here</a>
+								</article>
+							</div><?php
+							wp_reset_postdata();
+						endwhile;
+					?></div>
+				</section><?php
 			endif;
 			}
 		endwhile; ?>		
