@@ -3,7 +3,6 @@ jQuery(document).ready(function($) {
         adaptiveHeight: true,
         slidesToShow: 1,
         dots: true,
-        //variableWidth: true,
-        //centerMode: true,
+        arrows: false,
     });
 });
