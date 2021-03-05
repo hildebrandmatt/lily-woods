@@ -63,13 +63,17 @@
         text-transform: uppercase;
         line-height: 1rem;
         letter-spacing: 3px;
-        padding: 9px 0px;
+        padding: 9px 20px;
+        &:hover{
+            background-color: $accent_colour;
+        }
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+        
 	}
 }
 
