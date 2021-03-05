@@ -94,10 +94,8 @@ get_header();
 								$size = 'full'; // (thumbnail, medium, large, full or custom size)
 								if( $images ): ?>
 									<?php foreach( $images as $image_id ):
-										?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>">
-											<a href="<?php echo get_permalink() ?>">
-												<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-											</a>
+										?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>" data-sub-html="<a href='<?php the_permalink(); ?>' target='_parent'><p>Check out <?php  the_title(); ?>!</p></a>">
+											<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 										</div><?php	
 									endforeach; ?>
 								<?php endif;
