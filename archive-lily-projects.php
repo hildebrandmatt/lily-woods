@@ -40,7 +40,9 @@ get_header();
 					$category = $_GET['id'];
 				}
 
+				/* For stories... */
 				if ( $category == "Stories") :
+				/* Start the Loop */
 					?>
 					<div class="isotope-stories-grid"><?php
 					$i = 0;
@@ -49,6 +51,12 @@ get_header();
 						
 
 						if ( function_exists( 'get_field' ) ){
+						/*
+						* Include the Post-Type-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						*/
+						//get_template_part( 'template-parts/content', get_post_type() );
 						?><div class="grid-item">							
 						<a href="<?php the_permalink() ?>"><?php
 						the_post_thumbnail('large');
@@ -96,6 +104,11 @@ get_header();
 						?></div><?php
 						wp_reset_postdata();
 					}
+				
+				/*jQuery('.isotope-grid').isotope({
+					itemSelector: '.grid-item',
+					layoutMode: 'fitRows'
+				});*/
 				endif;
 
 			the_posts_navigation();
@@ -107,7 +120,7 @@ get_header();
 			endif;
 			?>
 
-	</main>
+	</main><!-- #main -->
 
 <?php
 get_footer();
