@@ -32,6 +32,10 @@ get_header();
 				}?>
 			</div>
 
+            <div class="down-arrow" aria-hidden="true">
+                <span></span>
+            </div>
+
 			<section class="portfolio-sneak-peek">
 				<h2 class="screen-reader-text">Portfolio Sneak Peak Gallery</h2>
 				<?php $images = get_field('portfolio_sneak_peek');
