@@ -234,3 +234,40 @@ function yoast_to_bottom(){
    return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+function wporg_remove_all_dashboard_metaboxes() {
+	if ( !current_user_can( 'manage_options' ) ) {
+		// Remove Welcome panel
+		remove_action( 'welcome_panel', 'wp_welcome_panel' );
+		// Remove the rest of the dashboard widgets
+		remove_meta_box( 'health_check_status', 'dashboard', 'normal' );
+		remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+		remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal');
+	}
+}
+add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
+
+function twd_remove_admin_links() {
+	if ( !current_user_can( 'manage_options' ) ) {
+		remove_menu_page( 'edit.php' );           // Remove Posts link
+    	remove_menu_page( 'edit-comments.php' );   // Remove Comments link
+	}
+}
+
+//Add Dashboard Widgets
+// This function is hooked into the 'wp_dashboard_setup' action below.
+function lilywoods_add_dashboard_widgets() {
+	wp_add_dashboard_widget(
+		'lilywoods_welcome_widget', // Widget slug.
+		esc_html__( 'New Welcome Widget', 'lwwelcome' ), // Title.
+		'lilywoods_add_widget_function' // Display function.
+	);
+}
+add_action( 'wp_dashboard_setup', 'lilywoods_add_dashboard_widgets' );
+
+// Create the function to output the content of your Dashboard Widget.
+function lilywoods_add_widget_function() {
+	// Display whatever you want to show.
+	echo '<p>Hello there, welcome to your site! I am a New Dashboard Widget.
+	Tutorials to come, so watch this space!</p>';
+}
