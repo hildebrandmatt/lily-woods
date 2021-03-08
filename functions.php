@@ -226,3 +226,11 @@ function my_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/style-login.css' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+/**
+* Lower Yoast SEO Metabox location
+*/
+function yoast_to_bottom(){
+   return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
