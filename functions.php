@@ -149,19 +149,25 @@ function lily_woods_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	wp_register_script( 'isotope', get_theme_file_uri( '/js/libs/isotope.pkgd.min.js' ), array( 'jquery' ), '3.0.1', true );
+	if( is_home() || is_front_page() || is_page( 'about' ) || is_archive() || is_singular( 'lily-projects' ) ) {
+		wp_register_script( 'isotope', get_theme_file_uri( '/js/libs/isotope.pkgd.min.js' ), array( 'jquery' ), '3.0.1', true );
 
-	wp_register_script( 'isotope-settings', get_theme_file_uri( '/js/isotope.settings.js' ), array( 'isotope' ), '1.0', true );
+		wp_register_script( 'isotope-settings', get_theme_file_uri( '/js/isotope.settings.js' ), array( 'isotope' ), '1.0', true );
 
-	wp_enqueue_script( 'packery', get_theme_file_uri( '/js/libs/packery-mode.pkgd.min.js' ), array( 'isotope-settings' ), '2.0.1', true );
+		wp_enqueue_script( 'packery', get_theme_file_uri( '/js/libs/packery-mode.pkgd.min.js' ), array( 'isotope-settings' ), '2.0.1', true );
+	}
 
-	wp_register_script( 'hc-lightgallery', get_theme_file_uri( '/js/libs/lightgallery.min.js' ), array('jquery'), '20210225', true );
+	if( is_home() || is_front_page() || is_archive() || is_singular( 'lily-projects' ) ) {
+		wp_register_script( 'hc-lightgallery', get_theme_file_uri( '/js/libs/lightgallery.min.js' ), array('jquery'), '20210225', true );
 
-	wp_enqueue_script( 'hc-lightgallery-settings', get_theme_file_uri( '/js/lightgallery-settings.js' ), array('hc-lightgallery'), '1.0', true );
+		wp_enqueue_script( 'hc-lightgallery-settings', get_theme_file_uri( '/js/lightgallery-settings.js' ), array('hc-lightgallery'), '1.0', true );
+	}
 
-	wp_register_script( 'slick-slider', get_theme_file_uri( '/js/libs/slick.min.js' ), array('jquery'), '1.8.1', true );
+	if ( is_home() || is_front_page() ) {
+		wp_register_script( 'slick-slider', get_theme_file_uri( '/js/libs/slick.min.js' ), array('jquery'), '1.8.1', true );
 
-	wp_enqueue_script( 'slick-slider-settings', get_theme_file_uri( '/js/slick-settings.js' ), array('slick-slider'), '1.0', true );
+		wp_enqueue_script( 'slick-slider-settings', get_theme_file_uri( '/js/slick-settings.js' ), array('slick-slider'), '1.0', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'lily_woods_scripts' );
 
@@ -287,12 +293,3 @@ function lilywoods_add_widget_function() {
 	echo '<p>Hello there, welcome to your site! I am a New Dashboard Widget.
 	Tutorials to come, so watch this space!</p>';
 }
-
-// Remove ability to add new pages
-function wpcodex_set_capabilities(){
-	global $wp_roles; // global class wp-includes/capabilities.php
-	$role = 'editor';
-	$cap = 'publish_pages';
-	$wp_roles->remove_cap( $role, $cap ); 
-}
-add_action( 'init', 'wpcodex_set_capabilities' );
