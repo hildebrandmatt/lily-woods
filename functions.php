@@ -255,6 +255,7 @@ function twd_remove_admin_links() {
     	remove_menu_page( 'edit-comments.php' );   // Remove Comments link
 	}
 }
+add_action( 'admin_menu', 'twd_remove_admin_links' );
 
 //Add Dashboard Widgets
 // This function is hooked into the 'wp_dashboard_setup' action below.
