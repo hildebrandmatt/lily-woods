@@ -243,6 +243,8 @@ function wporg_remove_all_dashboard_metaboxes() {
 		remove_meta_box( 'health_check_status', 'dashboard', 'normal' );
 		remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
 		remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal');
+		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+		remove_meta_box( 'dashboard_primary', get_current_screen(), 'side' );
 	}
 }
 add_action( 'wp_dashboard_setup', 'wporg_remove_all_dashboard_metaboxes' );
