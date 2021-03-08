@@ -208,19 +208,32 @@ function lw_post_filter( $use_block_editor, $post ) {
 }
 add_filter( 'use_block_editor_for_post', 'lw_post_filter', 10, 2 );
 
+/**
+ * Editing the login page
+ */
 function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
             background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/LilyWoodsLogo.png);
-		height:155px;
-		width:320px;
-		background-size: contain;
-		background-repeat: no-repeat;
+			height:155px;
+			width:320px;
+			background-size: contain;
+			background-repeat: no-repeat;
         	padding-bottom: 30px;
         }
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Lily Woods Photography Portfolio Site';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 function my_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/style-login.css' );
