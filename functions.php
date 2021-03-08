@@ -287,3 +287,12 @@ function lilywoods_add_widget_function() {
 	echo '<p>Hello there, welcome to your site! I am a New Dashboard Widget.
 	Tutorials to come, so watch this space!</p>';
 }
+
+// Remove ability to add new pages
+function wpcodex_set_capabilities(){
+	global $wp_roles; // global class wp-includes/capabilities.php
+	$role = 'editor';
+	$cap = 'publish_pages';
+	$wp_roles->remove_cap( $role, $cap ); 
+}
+add_action( 'init', 'wpcodex_set_capabilities' );
