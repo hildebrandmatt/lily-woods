@@ -290,13 +290,18 @@ add_filter( 'forminator_admin_cap', 'forminator_custom_cap_return', 10, 1);
 function lilywoods_add_dashboard_widgets() {
 	wp_add_dashboard_widget(
 		'lilywoods_guide_widget', // Widget slug.
-		esc_html__( 'Lily Woods Site Guide', 'lwwelcome' ), // Title.
+		esc_html__( 'Lily Woods Site Guide', 'lwguide' ), // Title.
 		'lilywoods_add_widget_function' // Display function.
 	);
 	wp_add_dashboard_widget(
 		'lilywoods_sidebar_widget', // Widget slug.
-		esc_html__( 'Lily Woods Sidebar Guide', 'lwwelcome' ), // Title.
+		esc_html__( 'Lily Woods Sidebar Guide', 'lwsidebar' ), // Title.
 		'lilywoods_add_sidebar_widget_function' // Display function.
+	);
+	wp_add_dashboard_widget(
+		'lilywoods_tutorial_widget', // Widget slug.
+		esc_html__( 'Lily Woods Tutorials', 'lwtutorials' ), // Title.
+		'lilywoods_add_tutorial_widget_function' // Display function.
 	);
 }
 add_action( 'wp_dashboard_setup', 'lilywoods_add_dashboard_widgets' );
@@ -316,4 +321,16 @@ function lilywoods_add_widget_function() {
 function lilywoods_add_sidebar_widget_function() {
 	// Display whatever you want to show.
 	echo "<img src='" . get_stylesheet_directory_uri() . "/images/SidebarTutorial.png' style='width: 100%'>";
+}
+
+// Create the function to output the content of your Dashboard Widget.
+function lilywoods_add_tutorial_widget_function() {
+	// Display whatever you want to show.
+	echo "<p>Looking for help with adding content? Here are some tutorials:</p>
+		  <ul style='margin-left: 40px'>
+		  	<li><a href='" . get_stylesheet_directory_uri() . "/tutorials/TheBasics.pdf' target='_blank'>The Basics: Navigating the Back End</a></li>
+		  	<li><a href='" . get_stylesheet_directory_uri() . "/tutorials/NewProject.pdf' target='_blank'>Adding a New Photo Project</a></li>
+		  	<li><a href='" . get_stylesheet_directory_uri() . "/tutorials/NewPackage.pdf' target='_blank'>Adding a New Pricing Package</a></li>
+		  	<li><a href='" . get_stylesheet_directory_uri() . "/tutorials/NewTestimonial.pdf' target='_blank'>Adding a New Testimonial</a></li>
+		  </ul>";
 }
