@@ -273,6 +273,8 @@ function twd_remove_admin_links() {
 		remove_menu_page( 'edit.php' );           // Remove Posts link
     	remove_menu_page( 'edit-comments.php' );   // Remove Comments link
     	remove_menu_page( 'upload.php' );   // Remove Media link
+    	remove_menu_page( 'edit.php?post_type=feedback' );   // Remove Feedback link
+    	remove_menu_page( 'tools.php' );   // Remove Tools link
 	}
 }
 add_action( 'admin_menu', 'twd_remove_admin_links' );
