@@ -92,7 +92,7 @@ get_header();
 			$args = array(
                 'post_type' => 'lily-testimonials',
 				'orderby'	=> 'rand',
-                'posts_per_page' => -1,
+                'posts_per_page' => 6,
             );
 
             $query = new WP_Query( $args );
