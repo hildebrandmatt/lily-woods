@@ -293,6 +293,11 @@ function lilywoods_add_dashboard_widgets() {
 		esc_html__( 'Lily Woods Site Guide', 'lwwelcome' ), // Title.
 		'lilywoods_add_widget_function' // Display function.
 	);
+	wp_add_dashboard_widget(
+		'lilywoods_sidebar_widget', // Widget slug.
+		esc_html__( 'Lily Woods Sidebar Guide', 'lwwelcome' ), // Title.
+		'lilywoods_add_sidebar_widget_function' // Display function.
+	);
 }
 add_action( 'wp_dashboard_setup', 'lilywoods_add_dashboard_widgets' );
 
@@ -302,4 +307,10 @@ function lilywoods_add_widget_function() {
 	echo "<p>Hi! Here are some pointers about managing the Lily Woods Portfolio site.</p>
 		  <p>Generally, it is best to avoid adding new pages, but if one is needed there is very basic styling set up for a title and some text. Keep in mind that there won’t be any links to the new page.</p>
 		  <p>Adding or removing photos from any section may affect the gallery layouts. Double check how it looks on the page before finalizing. In particular, galleries on the 'Home' and 'About' pages follow a set order, organized from left to right by date added, so if the images are changed it might take some work to make sure they are displaying nicely.</p>";
+}
+
+// Create the function to output the content of your Dashboard Widget.
+function lilywoods_add_sidebar_widget_function() {
+	// Display whatever you want to show.
+	echo "<img src='" . get_stylesheet_directory_uri() . "/images/SidebarTutorial.png'>";
 }
