@@ -273,16 +273,23 @@ function twd_remove_admin_links() {
 		remove_menu_page( 'edit.php' );           // Remove Posts link
     	remove_menu_page( 'edit-comments.php' );   // Remove Comments link
     	remove_menu_page( 'upload.php' );   // Remove Media link
+		add_options_page( )
 	}
 }
 add_action( 'admin_menu', 'twd_remove_admin_links' );
+
+function forminator_custom_cap_return( $cap ) {
+	$cap = 'delete_others_posts'; // set a unique custom capability here	
+	return $cap;	
+}	
+add_filter( 'forminator_admin_cap', 'forminator_custom_cap_return', 10, 1);
 
 //Add Dashboard Widgets
 // This function is hooked into the 'wp_dashboard_setup' action below.
 function lilywoods_add_dashboard_widgets() {
 	wp_add_dashboard_widget(
-		'lilywoods_welcome_widget', // Widget slug.
-		esc_html__( 'New Welcome Widget', 'lwwelcome' ), // Title.
+		'lilywoods_guide_widget', // Widget slug.
+		esc_html__( 'Lily Woods Site Guide', 'lwwelcome' ), // Title.
 		'lilywoods_add_widget_function' // Display function.
 	);
 }
@@ -291,6 +298,7 @@ add_action( 'wp_dashboard_setup', 'lilywoods_add_dashboard_widgets' );
 // Create the function to output the content of your Dashboard Widget.
 function lilywoods_add_widget_function() {
 	// Display whatever you want to show.
-	echo '<p>Hello there, welcome to your site! I am a New Dashboard Widget.
-	Tutorials to come, so watch this space!</p>';
+	echo "<p>Hi! Here are some pointers about managing the Lily Woods Portfolio site.</p>
+		  <p>Generally, it is best to avoid adding new pages, but if one is needed there is very basic styling set up for a title and some text. Keep in mind that there won’t be any links to the new page.</p>
+		  <p>Adding or removing photos from any section may affect the gallery layouts. Double check how it looks on the page before finalizing. In particular, galleries on the 'Home' and 'About' pages follow a set order, organized from left to right by date added, so if the images are changed it might take some work to make sure they are displaying nicely.</p>";
 }
