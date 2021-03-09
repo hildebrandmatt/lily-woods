@@ -306,9 +306,9 @@ function lilywoods_add_widget_function() {
 	// Display whatever you want to show.
 	echo "<p>Hi! Here are some pointers about managing the Lily Woods Portfolio site.</p>
 		  <ol>
-		  	<li><p><strong>It is best to avoid adding new pages.</strong>If one is needed there is very basic styling set up for a title and some text. Keep in mind that there won’t be any links to the new page.</p></li>
-		  	<li><p><strong>Adding or removing photos from any section may affect the gallery layouts.</strong>Galleries on the ‘Home’ and ‘About’ pages are displayed from left to right by date added, so always double check how they look on the page before finalizing.</p></li>
-		  	<li><p><strong>Some post fields may have special instructions.</strong>Please make note of these instructions where applicable to have things display properly.</p></li>
+		  	<li><p><strong>It is best to avoid adding new pages.</strong> If one is needed there is very basic styling set up for a title and some text. Keep in mind that there won’t be any links to the new page.</p></li>
+		  	<li><p><strong>Adding or removing photos from any section may affect the gallery layouts.</strong> Galleries on the ‘Home’ and ‘About’ pages are displayed from left to right by date added, so always double check how they look on the page before finalizing.</p></li>
+		  	<li><p><strong>Some post fields may have special instructions.</strong> Please make note of these instructions where applicable to have things display properly.</p></li>
 		  </ol>";
 }
 
