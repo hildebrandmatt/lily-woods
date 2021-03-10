@@ -52,7 +52,6 @@
 
 	li {
 		position: relative;
-		background:rgba(0, 0, 0, 0.4);
 
 		&:hover > a,
 		&.focus > a {
@@ -127,6 +126,10 @@
 	}
 }
 
+.page-id-13 .main-navigation li {	
+	background:rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (min-width: 37.5em) {
 
 	.menu-toggle {
@@ -151,6 +154,10 @@
 			padding: 0px 25px;
 		}
     }
+
+	.page-id-13 .main-navigation li {	
+		background: none;
+	}
 }
 
 @media (min-width: $breakpoint-desktop) {
