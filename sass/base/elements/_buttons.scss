@@ -19,3 +19,13 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+.carousel {
+	.slick-dots li button:before {
+		font-size: 15px;
+	}
+
+	.slick-dots li {
+		margin: 0 10px;
+	}
+}
