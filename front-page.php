@@ -76,8 +76,11 @@ get_header();
 				$size = 'large'; // (thumbnail, medium, large, full or custom size)
 				if( $images ): ?>
 					<div class="isotope-set-grid full-grid-home" id="lightgallery">
-					<?php foreach( $images as $image_id ):
-						?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>">
+					<?php foreach( $images as $image_id ):						
+						if(!empty(wp_get_post_parent_id($image_id))) {
+							$parent_id = wp_get_post_parent_id($image_id);
+						}
+						?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id ) ?>" data-sub-html="<a href='<?php echo get_permalink($parent_id) ?>' target='_parent'><p>Check out <?php echo get_the_title($parent_id); ?>!</p></a>">
 							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 						</div><?php
 					endforeach; ?>
