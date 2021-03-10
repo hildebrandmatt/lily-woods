@@ -351,6 +351,16 @@
         border-bottom: none;
     }
 
+    .package-section:nth-child(3)::after{
+        content: '';
+        border-bottom: solid 1px $main_colour;
+        width: 400px;
+        display: block;
+        margin: auto;
+        margin-top: 3.5rem;
+        margin-bottom: 1.25rem;
+    }
+
     .extras-section{
         margin: 0px 30px;
         display: flex;

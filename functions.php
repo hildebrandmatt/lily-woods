@@ -140,6 +140,14 @@ add_action( 'widgets_init', 'lily_woods_widgets_init' );*/
  * Enqueue scripts and styles.
  */
 function lily_woods_scripts() {
+
+    wp_enqueue_style( 
+        'lily-woods-googlefonts',
+        'https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Montserrat:ital@0;1&family=Raleway:wght@300;400&display=swap',
+        array(),
+        null
+    );
+
 	wp_enqueue_style( 'lily-woods-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'lily-woods-style', 'rtl', 'replace' );
 
