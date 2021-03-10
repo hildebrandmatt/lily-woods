@@ -22,6 +22,12 @@
 </a>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+<button id="scroll-top" class="scroll-top">
+    <a href="#page">
+        <span></span>
+    </a>
+    <span class="screen-reader-text">Scroll To Top</span>
+</button>
 
 <?php wp_footer(); ?>
 
