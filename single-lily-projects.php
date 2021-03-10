@@ -38,7 +38,7 @@ get_header();
 				if( $images ): ?>
 					<div class="isotope-grid full-grid" id="lightgallery">
 					<?php foreach( $images as $image_id ):
-						?><div class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id) ?>"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div><?php
+						?><a href="<?php echo wp_get_attachment_url( $image_id ) ?>" class="grid-item" data-src="<?php echo wp_get_attachment_url( $image_id) ?>"><?php echo wp_get_attachment_image( $image_id, $size ); ?></a><?php
 					endforeach; ?>
 					</div>
 				<?php endif; ?>
